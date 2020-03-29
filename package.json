@@ -56,7 +56,7 @@
     "@semantic-release/git"
   ],
   "files": [
-    "build"
+    "dist"
   ],
-  "main": "build/index.js"
+  "main": "dist/index.js"
 }
