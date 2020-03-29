@@ -1,7 +1,6 @@
 {
   "name": "eunoia",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -55,5 +54,9 @@
     "@semantic-release/github",
     "@semantic-release/npm",
     "@semantic-release/git"
-  ]
+  ],
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js"
 }
