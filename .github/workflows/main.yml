@@ -15,9 +15,11 @@ jobs:
       - name: Build app
         run: npm run build 
       - name: Semantic release
-      - name: Publish npm
-        run: npm publish --access public
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
+      - name: Publish npm
+        run: npm publish --access public
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
