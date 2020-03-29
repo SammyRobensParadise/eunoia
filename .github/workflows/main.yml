@@ -1,4 +1,4 @@
-name: Semantic-release 
+name: semantic-release 
 
 on: push
 jobs:
