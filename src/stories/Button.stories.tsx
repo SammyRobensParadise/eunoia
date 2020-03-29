@@ -6,6 +6,6 @@ export default {
   title: 'Button',
   component: Button,
 };
-
+// stoires
 export const Default = () => <Button onClick={action('clicked')}>Default Button</Button>;
 export const Primary = () => <Button primary onClick={action('clicked')}>Primary Button</Button>;
