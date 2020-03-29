@@ -20,6 +20,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
       - name: Publish npm
-        run: npm publish --access public
+      - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPMTOKEN }}" > ~/.npmrc
+        run: npm publish
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
