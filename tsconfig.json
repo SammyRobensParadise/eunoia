@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "outDir": "dist",
-    "target": "es5",
+    "outDir": "build",
+    "target": "es6",
     "lib": [
       "dom",
       "dom.iterable",
@@ -13,11 +13,11 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "commonjs",
+    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": false,
+    "noEmit": true,
     "jsx": "react"
   },
   "include": [
