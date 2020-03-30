@@ -13,3 +13,5 @@ exports.default = {
 // stoires
 exports.Default = function () { return react_1.default.createElement(Button_1.Button, { onClick: addon_actions_1.action('clicked') }, "Default Button"); };
 exports.Primary = function () { return react_1.default.createElement(Button_1.Button, { primary: true, onClick: addon_actions_1.action('clicked') }, "Primary Button"); };
+exports.TransparentBackground = function () { return react_1.default.createElement(Button_1.Button, { transparent: true, onClick: addon_actions_1.action('clicked') }, "Transparent Background"); };
+exports.TransparentBackgroundBlackFont = function () { return react_1.default.createElement(Button_1.Button, { transparent: true, blackFont: true, onClick: addon_actions_1.action('clicked') }, "Transparent Background Black Font"); };
