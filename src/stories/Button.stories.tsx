@@ -23,3 +23,16 @@ export const TransparentBackgroundBlackFont = () => (
     Transparent Background Black Font
   </Button>
 )
+export const FontOverride = () => (
+  <div>
+  <Button   fontOverride="1rem" onClick={action('clicked')}>
+    1rem
+  </Button>
+    <Button   fontOverride="2rem" onClick={action('clicked')}>
+    2rem
+  </Button>
+  <Button   fontOverride="3rem" onClick={action('clicked')}>
+    3rem
+  </Button>
+  </div>
+)
