@@ -66,7 +66,18 @@ const Default = () => (
   fontOverride?: string
   height?: string
 ```
-
+### Icons
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--right-arrow)
+#### RightArrow
+```tsx
+const Right_Arrow = () => <RightArrow scalingFactor={2} color="#000000" />
+```
+### Icon Props
+```ts
+  color?: string
+  offset?: string
+  scalingFactor?: number
+```
 ## More coming soon
 
 :)
