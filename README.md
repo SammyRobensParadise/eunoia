@@ -124,6 +124,22 @@ const Dribbble_Icon = () => <DribbbleIcon color="#000000" scalingFactor={1} />
 const Github_Icon = () => <GithubIcon color="#000000" scalingFactor={1} />
 ```
 
+#### MediumIcon
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--medium-icon)
+
+```tsx
+const Medium_Icon = () => <MediumIcon color="#000000" scalingFactor={1} />
+```
+
+#### LinkedinIcon
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--linkedin-icon)
+
+```tsx
+const Linkedin_Icon = () => <LinkedinIcon color="#000000" scalingFactor={1} />
+```
+
 ### Icon Props
 
 ```ts

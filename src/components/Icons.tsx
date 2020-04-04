@@ -38,6 +38,17 @@ type GithubIconProps = {
   color: string
   scalingFactor: number
 }
+
+type MediumIconProps = {
+  color: string
+  scalingFactor: number
+}
+
+type LinkedinIconProps = {
+  color: string
+  scalingFactor: number
+}
+
 export const RightArrow = styled.i<RightArrowProps>`
   position: relative;
   display: block;
@@ -208,6 +219,48 @@ export const GithubIcon = ({ color, scalingFactor }: GithubIconProps) => {
           data-name="Icon simple-github"
           d="M18,.445a18,18,0,0,0-5.693,35.077c.9.169,1.23-.387,1.23-.866,0-.428-.015-1.56-.023-3.06-5.007,1.086-6.063-2.415-6.063-2.415a4.771,4.771,0,0,0-2-2.632c-1.63-1.116.126-1.094.126-1.094A3.774,3.774,0,0,1,8.333,27.31a3.836,3.836,0,0,0,5.243,1.5,3.838,3.838,0,0,1,1.14-2.407c-4-.45-8.2-2-8.2-8.9a6.944,6.944,0,0,1,1.852-4.83,6.4,6.4,0,0,1,.158-4.764s1.507-.483,4.95,1.845a16.97,16.97,0,0,1,9,0C25.9,7.428,27.4,7.911,27.4,7.911a6.577,6.577,0,0,1,.18,4.764,6.973,6.973,0,0,1,1.845,4.83c0,6.915-4.208,8.438-8.212,8.88a4.309,4.309,0,0,1,1.215,3.33c0,2.409-.022,4.344-.022,4.929,0,.472.315,1.035,1.237.855A17.978,17.978,0,0,0,18,.445"
           transform="translate(0 -0.445)"
+          fill={color}
+        />
+      </svg>
+    </div>
+  )
+}
+
+export const MediumIcon = ({ color, scalingFactor }: MediumIconProps) => {
+  return (
+    <div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={`${scalingFactor ? 31.5 * scalingFactor : 31.5}`}
+        height={`${scalingFactor ? 31.5 * scalingFactor : 31.5}`}
+        viewBox="0 0 31.5 31.5"
+      >
+        <path
+          id="Icon_awesome-medium"
+          data-name="Icon awesome-medium"
+          d="M0,2.25v31.5H31.5V2.25ZM26.17,9.71l-1.687,1.617a.5.5,0,0,0-.19.471V23.7a.484.484,0,0,0,.19.471l1.652,1.617v.359h-8.3V25.8l1.709-1.659c.169-.169.169-.218.169-.471V14.048L14.963,26.114h-.64L8.789,14.048v8.086a1.112,1.112,0,0,0,.309.928l2.222,2.693v.359H5.006v-.359l2.222-2.693a1.076,1.076,0,0,0,.288-.928V12.783a.8.8,0,0,0-.267-.689L5.273,9.71V9.352h6.138l4.739,10.406,4.17-10.4h5.85Z"
+          transform="translate(0 -2.25)"
+          fill={color}
+        />
+      </svg>
+    </div>
+  )
+}
+
+export const LinkedinIcon = ({ color, scalingFactor }: LinkedinIconProps) => {
+  return (
+    <div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={`${scalingFactor ? 31.5 * scalingFactor : 31.5}`}
+        height={`${scalingFactor ? 31.499 * scalingFactor : 31.499}`}
+        viewBox="0 0 31.5 31.499"
+      >
+        <path
+          id="Icon_awesome-linkedin-in"
+          data-name="Icon awesome-linkedin-in"
+          d="M7.051,31.5H.52V10.47H7.051ZM3.782,7.6A3.8,3.8,0,1,1,7.564,3.783,3.814,3.814,0,0,1,3.782,7.6ZM31.493,31.5H24.976V21.263c0-2.44-.049-5.569-3.4-5.569-3.4,0-3.916,2.651-3.916,5.393V31.5H11.142V10.47h6.263v2.869H17.5a6.862,6.862,0,0,1,6.179-3.4c6.609,0,7.824,4.352,7.824,10.005V31.5Z"
+          transform="translate(0 -0.001)"
           fill={color}
         />
       </svg>

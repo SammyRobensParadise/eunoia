@@ -1,8 +1,18 @@
 {
   "name": "eunoia",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "files": [
     "dist"
+  ],
+  "keywords": [
+    "typescript",
+    "react",
+    "eunoia",
+    "front-end",
+    "component",
+    "library",
+    "functional",
+    "styled-components"
   ],
   "main": "dist/index.js",
   "dependencies": {
