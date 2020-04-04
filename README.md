@@ -113,7 +113,15 @@ const Down_Arrow = () => <DownArrow scalingFactor={2} color="#000000" />
 [Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--dribbble-icon)
 
 ```tsx
-const Dribbble_Icon = () => <DribbbleIcon offset={'0px'} color="#000000" scalingFactor={1} />
+const Dribbble_Icon = () => <DribbbleIcon color="#000000" scalingFactor={1} />
+```
+
+#### GithubIcon
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--github-icon)
+
+```tsx
+const Github_Icon = () => <GithubIcon color="#000000" scalingFactor={1} />
 ```
 
 ### Icon Props
@@ -121,7 +129,7 @@ const Dribbble_Icon = () => <DribbbleIcon offset={'0px'} color="#000000" scaling
 ```ts
   color?: string
   offset?: string
-  scalingFactor?: number
+  scalingFactor?: number | null
 ```
 
 ## More coming soon
