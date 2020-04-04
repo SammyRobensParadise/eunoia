@@ -10,6 +10,7 @@
 ![Version](https://img.shields.io/npm/v/eunoia?style=for-the-badge)
 
 #### Versioning
+
 `Major.Minor.Update`\
 `xx.xx.xxxx`
 
@@ -105,6 +106,14 @@ const Down_Arrow = () => <DownArrow scalingFactor={2} color="#000000" />
 
 ```tsx
 const Down_Arrow = () => <DownArrow scalingFactor={2} color="#000000" />
+```
+
+#### DribbbleIcon
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--dribbble-icon)
+
+```tsx
+const Dribbble_Icon = () => <DribbbleIcon offset={'0px'} color="#000000" scalingFactor={1} />
 ```
 
 ### Icon Props
