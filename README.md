@@ -9,6 +9,10 @@
 ![Build](https://img.shields.io/github/workflow/status/SammyRobensParadise/eunoia/semantic-release?style=for-the-badge)
 ![Version](https://img.shields.io/npm/v/eunoia?style=for-the-badge)
 
+#### Versioning
+`Major.Minor.Update`\
+`xx.xx.xxxx`
+
 ## Storybook Link
 
 ![Storybook](https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png)
@@ -53,12 +57,14 @@ const Default = () => <Button onClick={action('clicked')}>Default Button</Button
 const Default = () => (
   <CircleButton onClick={action('clicked')}>
     <IconWrapper>
-      <Icon/>
+      <Icon />
     </IconWrapper>
   </CircleButton>
 )
 ```
+
 ### CircleButton props
+
 ```ts
   primary?: boolean
   transparent?: boolean
@@ -66,18 +72,49 @@ const Default = () => (
   fontOverride?: string
   height?: string
 ```
+
 ### Icons
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--right-arrow)
+
 #### RightArrow
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--right-arrow)
+
 ```tsx
 const Right_Arrow = () => <RightArrow scalingFactor={2} color="#000000" />
 ```
+
+#### LeftArrow
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--left-arrow)
+
+```tsx
+const Left_Arrow = () => <LeftArrow scalingFactor={2} color="#000000" />
+```
+
+#### DownArrow
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--down-arrow)
+
+```tsx
+const Down_Arrow = () => <DownArrow scalingFactor={2} color="#000000" />
+```
+
+#### UpArrow
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--up-arrow)
+
+```tsx
+const Down_Arrow = () => <DownArrow scalingFactor={2} color="#000000" />
+```
+
 ### Icon Props
+
 ```ts
   color?: string
   offset?: string
   scalingFactor?: number
 ```
+
 ## More coming soon
 
 :)

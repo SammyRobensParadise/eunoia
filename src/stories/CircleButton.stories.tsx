@@ -15,15 +15,14 @@ const Icon = styled.i<IconProps>`
     display: block;
     transform: scale(var(--ggs,1));
     width: 22px;
-    height: 22px
-}
+    height: 22px;
 &::after,
 &::before {
     content: "";
     display: block;
     box-sizing: border-box;
     position: absolute;
-    right: 3px
+    right: 3px;
 }
 &::after {
     width: 8px;
@@ -31,16 +30,14 @@ const Icon = styled.i<IconProps>`
     border-top: 2px solid;
     border-right: 2px solid;
     transform: rotate(45deg);
-    bottom: 7px
+    bottom: 7px;
 }
 &::before {
     width: 16px;
     height: 2px;
     bottom: 10px;
-    background: ${(props) => (props.bg ? props.bg : '#000000')};
-}
-`
-
+    background: ${(props) => (props.bg ? props.bg : `#000000`)};
+    }`
 export default {
   title: 'CircleButton',
   component: CircleButton,
