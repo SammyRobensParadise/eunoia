@@ -188,6 +188,46 @@ Figma_Icon = () => <FigmaIcon scalingFactor={1} color="#000000" />
 Sketch_Icon = () => <SketchIcon scalingFactor={1} color="#000000" />
 ```
 
+#### InvisionIcon
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/design-tool-icons--invision-icon)
+
+```tsx
+Invision_Icon = () => <InvisionIcon scalingFactor={1} color="#000000" />
+```
+
+#### AftereffectsIcon
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/design-tool-icons--aftereffects-icon)
+
+```tsx
+Aftereffects_Icon = () => <AftereffectsIcon scalingFactor={1} color="#000000" />
+```
+
+#### IndesignIcon
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/design-tool-icons--indesign-icon)
+
+```tsx
+Indesign_Icon = () => <IndesignIcon scalingFactor={1} color="#000000" />
+```
+
+#### MaterialDesignIcon
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/design-tool-icons--material-design-icon)
+
+```tsx
+Material_Design_Icon = () => <MaterialDesignIcon scalingFactor={1} color="#000000" />
+```
+
+#### CreativecloudIcon
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/design-tool-icons--creative-cloud-icon)
+
+```tsx
+Creative_Cloud_Icon = () => <CreativecloudIcon scalingFactor={1} color="#000000" />
+```
+
 ### Icon Props
 
 ```ts
