@@ -148,6 +148,46 @@ const Linkedin_Icon = () => <LinkedinIcon color="#000000" scalingFactor={1} />
 const Home_Icon = () => <HomeIcon color="#000000" scalingFactor={1} />
 ```
 
+#### PhotoshopIcon
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/design-tool-icons--photoshop-icon)
+
+```tsx
+const Photoshop_Icon = () => <PhotoshopIcon color="#000000" scalingFactor={1} />
+```
+
+#### IllustratorIcon
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/design-tool-icons--illustrator-icon)
+
+```tsx
+Illustrator_Icon = () => <IllustratorIcon scalingFactor={1} color="#000000" />
+```
+
+#### ExperienceDesignerIcon
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/design-tool-icons--experience-designer-icon)
+
+```tsx
+Experience_Designer_Icon = () => <ExperienceDesignerIcon scalingFactor={1} color="#000000" />
+```
+
+#### FigmaIcon
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/design-tool-icons--figma-icon)
+
+```tsx
+Figma_Icon = () => <FigmaIcon scalingFactor={1} color="#000000" />
+```
+
+#### SketchIcon
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/design-tool-icons--sketch-icon)
+
+```tsx
+Sketch_Icon = () => <SketchIcon scalingFactor={1} color="#000000" />
+```
+
 ### Icon Props
 
 ```ts
