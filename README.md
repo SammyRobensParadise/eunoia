@@ -8,6 +8,7 @@
 
 ![Build](https://img.shields.io/github/workflow/status/SammyRobensParadise/eunoia/semantic-release?style=for-the-badge)
 ![Version](https://img.shields.io/npm/v/eunoia?style=for-the-badge)
+![Status](https://img.shields.io/website?down_color=red&down_message=offline&style=for-the-badge&up_color=green&up_message=online&url=https%3A%2F%2Fconfident-morse-bbc2f8.netlify.com%2F%3Fpath%3D%2Fstory%2Fbutton--default)
 
 #### Versioning
 
