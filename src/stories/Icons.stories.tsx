@@ -8,6 +8,7 @@ import {
   GithubIcon,
   MediumIcon,
   LinkedinIcon,
+  HomeIcon,
 } from '../components/Icons'
 export default {
   title: 'Icons',
@@ -20,3 +21,4 @@ export const Dribbble_Icon = () => <DribbbleIcon color="#000000" scalingFactor={
 export const Github_Icon = () => <GithubIcon color="#000000" scalingFactor={1} />
 export const Medium_Icon = () => <MediumIcon color="#000000" scalingFactor={1} />
 export const Linkedin_Icon = () => <LinkedinIcon color="#000000" scalingFactor={1} />
+export const Home_Icon = () => <HomeIcon color="#000000" scalingFactor={1} />

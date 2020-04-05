@@ -140,6 +140,14 @@ const Medium_Icon = () => <MediumIcon color="#000000" scalingFactor={1} />
 const Linkedin_Icon = () => <LinkedinIcon color="#000000" scalingFactor={1} />
 ```
 
+#### HomeIcon
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--home-icon)
+
+```tsx
+const Home_Icon = () => <HomeIcon color="#000000" scalingFactor={1} />
+```
+
 ### Icon Props
 
 ```ts

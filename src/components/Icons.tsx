@@ -48,6 +48,10 @@ type LinkedinIconProps = {
   color: string
   scalingFactor: number
 }
+type HomeIconProps = {
+  color: string
+  scalingFactor: number
+}
 
 export const RightArrow = styled.i<RightArrowProps>`
   position: relative;
@@ -261,6 +265,27 @@ export const LinkedinIcon = ({ color, scalingFactor }: LinkedinIconProps) => {
           data-name="Icon awesome-linkedin-in"
           d="M7.051,31.5H.52V10.47H7.051ZM3.782,7.6A3.8,3.8,0,1,1,7.564,3.783,3.814,3.814,0,0,1,3.782,7.6ZM31.493,31.5H24.976V21.263c0-2.44-.049-5.569-3.4-5.569-3.4,0-3.916,2.651-3.916,5.393V31.5H11.142V10.47h6.263v2.869H17.5a6.862,6.862,0,0,1,6.179-3.4c6.609,0,7.824,4.352,7.824,10.005V31.5Z"
           transform="translate(0 -0.001)"
+          fill={color}
+        />
+      </svg>
+    </div>
+  )
+}
+
+export const HomeIcon = ({ color, scalingFactor }: HomeIconProps) => {
+  return (
+    <div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={`${scalingFactor ? 30 * scalingFactor : 30}`}
+        height={`${scalingFactor ? 25.5 * scalingFactor : 25.5}`}
+        viewBox="0 0 30 25.5"
+      >
+        <path
+          id="Icon_material-home"
+          data-name="Icon material-home"
+          d="M15,30V21h6v9h7.5V18H33L18,4.5,3,18H7.5V30Z"
+          transform="translate(-3 -4.5)"
           fill={color}
         />
       </svg>
