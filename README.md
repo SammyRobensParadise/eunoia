@@ -229,6 +229,14 @@ Material_Design_Icon = () => <MaterialDesignIcon scalingFactor={1} color="#00000
 Creative_Cloud_Icon = () => <CreativecloudIcon scalingFactor={1} color="#000000" />
 ```
 
+#### ReactIcon
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--react-icon)
+
+```tsx
+const React_Icon = () => <ReactIcon scalingFactor={1} color="#000000" />
+```
+
 ### Icon Props
 
 ```ts
