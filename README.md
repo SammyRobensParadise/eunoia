@@ -341,6 +341,62 @@ const Html_Icon = () => <HtmlIcon scalingFactor={1} color="#000000" />
 const Yarn_Icon = () => <YarnIcon scalingFactor={1} color="#000000" />
 ```
 
+#### NpmIcon
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--npm-icon)
+
+```tsx
+const Npm_Icon = () => <NpmIcon scalingFactor={1} color="#000000" />
+```
+
+#### UbuntuIcon
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--ubuntu-icon)
+
+```tsx
+const Ubuntu_Icon = () => <UbuntuIcon scalingFactor={1} color="#000000" />
+```
+
+#### MySQLIcon
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--mysql-icon)
+
+```tsx
+const MySQL_Icon = () => <MySQLIcon scalingFactor={1} color="#000000" />
+```
+
+#### JQueryIcon
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--jquery-icon)
+
+```tsx
+const JQuery_Icon = () => <MySQLIcon scalingFactor={1} color="#000000" />
+```
+
+#### FirebaseIcon
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--jquery-icon)
+
+```tsx
+const Firebase_Icon = () => <FirebaseIcon scalingFactor={1} color="#000000" />
+```
+
+#### CppIcon
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--cpp-icon)
+
+```tsx
+const Cpp_Icon = () => <CppIcon scalingFactor={1} color="#000000" />
+```
+
+#### TsIcon
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--ts-icon)
+
+```tsx
+const Ts_Icon = () => <TspIcon scalingFactor={1} color="#000000" />
+```
+
 ### Icon Props
 
 ```ts
