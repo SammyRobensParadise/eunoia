@@ -8,7 +8,12 @@ import {
   PHPIcon,
   GitLargeIcon,
   JenkinsIcon,
-  K8sIcon
+  K8sIcon,
+  DockerIcon,
+  SassIcon,
+  CssIcon,
+  HtmlIcon,
+  YarnIcon,
 } from '../components/DevTools'
 export default {
   title: 'Development Tool Icons',
@@ -22,5 +27,8 @@ export const PHP_Icon = () => <PHPIcon scalingFactor={1} color="#000000" />
 export const Git_Large_Icon = () => <GitLargeIcon scalingFactor={1} color="#000000" />
 export const Jenkins_Icon = () => <JenkinsIcon scalingFactor={1} color="#000000" />
 export const K8s_Icon = () => <K8sIcon scalingFactor={1} color="#000000" />
-
-
+export const Docker_Icon = () => <DockerIcon scalingFactor={1} color="#000000" />
+export const Sass_Icon = () => <SassIcon scalingFactor={1} color="#000000" />
+export const Css_Icon = () => <CssIcon scalingFactor={1} color="#000000" />
+export const Html_Icon = () => <HtmlIcon scalingFactor={1} color="#000000" />
+export const Yarn_Icon = () => <YarnIcon scalingFactor={1} color="#000000" />

@@ -301,6 +301,46 @@ const Jenkins_Icon = () => <JenkinsIcon scalingFactor={1} color="#000000" />
 const K8s_Icon = () => <K8sIcon scalingFactor={1} color="#000000" />
 ```
 
+#### DockerIcon
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--docker-icon)
+
+```tsx
+const Docker_Icon = () => <DockerIcon scalingFactor={1} color="#000000" />
+```
+
+#### SassIcon
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--sass-icon)
+
+```tsx
+const Sass_Icon = () => <SassIcon scalingFactor={1} color="#000000" />
+```
+
+#### CssIcon
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--css-icon)
+
+```tsx
+const Css_Icon = () => <CssIcon scalingFactor={1} color="#000000" />
+```
+
+#### HtmlIcon
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--html-icon)
+
+```tsx
+const Html_Icon = () => <HtmlIcon scalingFactor={1} color="#000000" />
+```
+
+#### YarnIcon
+
+[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--yarn-icon)
+
+```tsx
+const Yarn_Icon = () => <YarnIcon scalingFactor={1} color="#000000" />
+```
+
 ### Icon Props
 
 ```ts
