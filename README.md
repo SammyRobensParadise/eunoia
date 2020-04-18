@@ -77,321 +77,241 @@ const Default = () => (
 
 ### Icons
 
-#### RightArrow
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--right-arrow)
+[RightArrow](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--right-arrow)
 
 ```tsx
 const Right_Arrow = () => <RightArrow scalingFactor={2} color="#000000" />
 ```
 
-#### LeftArrow
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--left-arrow)
+[LeftArrow](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--left-arrow)
 
 ```tsx
 const Left_Arrow = () => <LeftArrow scalingFactor={2} color="#000000" />
 ```
 
-#### DownArrow
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--down-arrow)
+[DownArrow](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--down-arrow)
 
 ```tsx
 const Down_Arrow = () => <DownArrow scalingFactor={2} color="#000000" />
 ```
 
-#### UpArrow
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--up-arrow)
+[UpArrow](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--up-arrow)
 
 ```tsx
-const Down_Arrow = () => <DownArrow scalingFactor={2} color="#000000" />
+const Up_Arrow = () => <UpArrow scalingFactor={2} color="#000000" />
 ```
 
-#### DribbbleIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--dribbble-icon)
+[DribbbleIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--dribbble-icon)
 
 ```tsx
 const Dribbble_Icon = () => <DribbbleIcon color="#000000" scalingFactor={1} />
 ```
 
-#### GithubIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--github-icon)
+[GithubIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--github-icon)
 
 ```tsx
 const Github_Icon = () => <GithubIcon color="#000000" scalingFactor={1} />
 ```
 
-#### MediumIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--medium-icon)
+[MediumIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--medium-icon)
 
 ```tsx
 const Medium_Icon = () => <MediumIcon color="#000000" scalingFactor={1} />
 ```
 
-#### LinkedinIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--linkedin-icon)
+[LinkedinIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--linkedin-icon)
 
 ```tsx
 const Linkedin_Icon = () => <LinkedinIcon color="#000000" scalingFactor={1} />
 ```
 
-#### HomeIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--home-icon)
+[HomeIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--home-icon)
 
 ```tsx
 const Home_Icon = () => <HomeIcon color="#000000" scalingFactor={1} />
 ```
 
-#### PhotoshopIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/design-tool-icons--photoshop-icon)
+[PhotoshopIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/design-tool-icons--photoshop-icon)
 
 ```tsx
 const Photoshop_Icon = () => <PhotoshopIcon color="#000000" scalingFactor={1} />
 ```
 
-#### IllustratorIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/design-tool-icons--illustrator-icon)
+[IllustratorIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/design-tool-icons--illustrator-icon)
 
 ```tsx
 Illustrator_Icon = () => <IllustratorIcon scalingFactor={1} color="#000000" />
 ```
 
-#### ExperienceDesignerIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/design-tool-icons--experience-designer-icon)
+[ExperienceDesignerIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/design-tool-icons--experience-designer-icon)
 
 ```tsx
 Experience_Designer_Icon = () => <ExperienceDesignerIcon scalingFactor={1} color="#000000" />
 ```
 
-#### FigmaIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/design-tool-icons--figma-icon)
+[FigmaIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/design-tool-icons--figma-icon)
 
 ```tsx
 Figma_Icon = () => <FigmaIcon scalingFactor={1} color="#000000" />
 ```
 
-#### SketchIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/design-tool-icons--sketch-icon)
+[SketchIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/design-tool-icons--sketch-icon)
 
 ```tsx
 Sketch_Icon = () => <SketchIcon scalingFactor={1} color="#000000" />
 ```
 
-#### InvisionIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/design-tool-icons--invision-icon)
+[InvisionIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/design-tool-icons--invision-icon)
 
 ```tsx
 Invision_Icon = () => <InvisionIcon scalingFactor={1} color="#000000" />
 ```
 
-#### AftereffectsIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/design-tool-icons--aftereffects-icon)
+[AftereffectsIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/design-tool-icons--aftereffects-icon)
 
 ```tsx
 Aftereffects_Icon = () => <AftereffectsIcon scalingFactor={1} color="#000000" />
 ```
 
-#### IndesignIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/design-tool-icons--indesign-icon)
+[IndesignIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/design-tool-icons--indesign-icon)
 
 ```tsx
 Indesign_Icon = () => <IndesignIcon scalingFactor={1} color="#000000" />
 ```
 
-#### MaterialDesignIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/design-tool-icons--material-design-icon)
+[MaterialDesignIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/design-tool-icons--material-design-icon)
 
 ```tsx
 Material_Design_Icon = () => <MaterialDesignIcon scalingFactor={1} color="#000000" />
 ```
 
-#### CreativecloudIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/design-tool-icons--creative-cloud-icon)
+[CreativecloudIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/design-tool-icons--creative-cloud-icon)
 
 ```tsx
 Creative_Cloud_Icon = () => <CreativecloudIcon scalingFactor={1} color="#000000" />
 ```
 
-#### ReactIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--react-icon)
+[ReactIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--react-icon)
 
 ```tsx
 const React_Icon = () => <ReactIcon scalingFactor={1} color="#000000" />
 ```
 
-#### PythonIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--python-icon)
+[PythonIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--python-icon)
 
 ```tsx
 const Python_Icon = () => <PythonIcon scalingFactor={1} color="#000000" />
 ```
 
-#### WebpackIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--webpack-icon)
+[WebpackIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--webpack-icon)
 
 ```tsx
 const Webpack_Icon = () => <WebpackIcon scalingFactor={1} color="#000000" />
 ```
 
-#### NodeIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--node-icon)
+[NodeIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--node-icon)
 
 ```tsx
 const Node_Icon = () => <NodeIcon scalingFactor={1} color="#000000" />
 ```
 
-#### JSIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--js-icon)
+[JSIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--js-icon)
 
 ```tsx
 const JS_Icon = () => <JSIcon scalingFactor={1} color="#000000" />
 ```
 
-#### PHPIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--php-icon)
+[PHPIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--php-icon)
 
 ```tsx
 const PHP_Icon = () => <PHPIcon scalingFactor={1} color="#000000" />
 ```
 
-#### GitLargeIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--git-large-icon)
+[GitLargeIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--git-large-icon)
 
 ```tsx
 const Git_Large_Icon = () => <GitLargeIcon scalingFactor={1} color="#000000" />
 ```
 
-#### JenkinsIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--jenkins-icon)
+[JenkinsIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--jenkins-icon)
 
 ```tsx
 const Jenkins_Icon = () => <JenkinsIcon scalingFactor={1} color="#000000" />
 ```
 
-#### K8sIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--k8s-icon)
+[K8sIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--k8s-icon)
 
 ```tsx
 const K8s_Icon = () => <K8sIcon scalingFactor={1} color="#000000" />
 ```
 
-#### DockerIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--docker-icon)
+[DockerIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--docker-icon)
 
 ```tsx
 const Docker_Icon = () => <DockerIcon scalingFactor={1} color="#000000" />
 ```
 
-#### SassIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--sass-icon)
+[SassIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--sass-icon)
 
 ```tsx
 const Sass_Icon = () => <SassIcon scalingFactor={1} color="#000000" />
 ```
 
-#### CssIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--css-icon)
+[CssIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--css-icon)
 
 ```tsx
 const Css_Icon = () => <CssIcon scalingFactor={1} color="#000000" />
 ```
 
-#### HtmlIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--html-icon)
+[HtmlIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--html-icon)
 
 ```tsx
 const Html_Icon = () => <HtmlIcon scalingFactor={1} color="#000000" />
 ```
 
-#### YarnIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--yarn-icon)
+[YarnIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--yarn-icon)
 
 ```tsx
 const Yarn_Icon = () => <YarnIcon scalingFactor={1} color="#000000" />
 ```
 
-#### NpmIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--npm-icon)
+[NpmIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--npm-icon)
 
 ```tsx
 const Npm_Icon = () => <NpmIcon scalingFactor={1} color="#000000" />
 ```
 
-#### UbuntuIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--ubuntu-icon)
+[UbuntuIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--ubuntu-icon)
 
 ```tsx
 const Ubuntu_Icon = () => <UbuntuIcon scalingFactor={1} color="#000000" />
 ```
 
-#### MySQLIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--mysql-icon)
+[MySQLIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--mysql-icon)
 
 ```tsx
 const MySQL_Icon = () => <MySQLIcon scalingFactor={1} color="#000000" />
 ```
 
-#### JQueryIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--jquery-icon)
+[JQueryIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--jquery-icon)
 
 ```tsx
 const JQuery_Icon = () => <MySQLIcon scalingFactor={1} color="#000000" />
 ```
 
-#### FirebaseIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--jquery-icon)
+[FirebaseIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--jquery-icon)
 
 ```tsx
 const Firebase_Icon = () => <FirebaseIcon scalingFactor={1} color="#000000" />
 ```
 
-#### CppIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--cpp-icon)
+[CppIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--cpp-icon)
 
 ```tsx
 const Cpp_Icon = () => <CppIcon scalingFactor={1} color="#000000" />
 ```
 
-#### TsIcon
-
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--ts-icon)
+[TsIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/development-tool-icons--ts-icon)
 
 ```tsx
 const Ts_Icon = () => <TspIcon scalingFactor={1} color="#000000" />
@@ -405,8 +325,8 @@ const Ts_Icon = () => <TspIcon scalingFactor={1} color="#000000" />
   scalingFactor?: number | null
 ```
 
-## More coming soon
-
+## More components coming soon
+🤟💻🔨
 :)
 
 ## Contact

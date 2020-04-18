@@ -11,6 +11,8 @@ export interface ButtonProps {
   fontOverride?: string
 }
 
+
+
 export const Button = styled.button<ButtonProps>`
   /* Adapt the colors based on primary prop */
   background: ${props => props.primary ? `${colors.black}`:props.transparent? "none": `${colors.white}`};
