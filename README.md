@@ -51,61 +51,31 @@ const Default = () => <Button onClick={action('clicked')}>Default Button</Button
   blackFont?: boolean
 ```
 
-### Icons
+### Website Icons
 
-[RightArrow](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--right-arrow)
+[Website Icons](https://confident-morse-bbc2f8.netlify.com/?path=/story/components--design-icons)
 
 ```tsx
 const Right_Arrow = () => <RightArrow scalingFactor={2} color="#000000" />
 ```
+#### List of Website Icons
+1. RightArrow
+2. LeftArrow
+3. DownArrow
+4. UpArrow
+5. Dribbble
+6. Github
+7. Medium
+8. Linkedin
+9. Home
 
-[LeftArrow](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--left-arrow)
-
-```tsx
-const Left_Arrow = () => <LeftArrow scalingFactor={2} color="#000000" />
+### Icon Props
+```ts
+  color?: string
+  offset?: string
+  scalingFactor?: number
 ```
 
-[DownArrow](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--down-arrow)
-
-```tsx
-const Down_Arrow = () => <DownArrow scalingFactor={2} color="#000000" />
-```
-
-[UpArrow](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--up-arrow)
-
-```tsx
-const Up_Arrow = () => <UpArrow scalingFactor={2} color="#000000" />
-```
-
-[DribbbleIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--dribbble-icon)
-
-```tsx
-const Dribbble_Icon = () => <DribbbleIcon color="#000000" scalingFactor={1} />
-```
-
-[GithubIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--github-icon)
-
-```tsx
-const Github_Icon = () => <GithubIcon color="#000000" scalingFactor={1} />
-```
-
-[MediumIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--medium-icon)
-
-```tsx
-const Medium_Icon = () => <MediumIcon color="#000000" scalingFactor={1} />
-```
-
-[LinkedinIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--linkedin-icon)
-
-```tsx
-const Linkedin_Icon = () => <LinkedinIcon color="#000000" scalingFactor={1} />
-```
-
-[HomeIcon](https://confident-morse-bbc2f8.netlify.com/?path=/story/icons--home-icon)
-
-```tsx
-const Home_Icon = () => <HomeIcon color="#000000" scalingFactor={1} />
-```
 
 ### Design Icons
 [Design Icons](https://confident-morse-bbc2f8.netlify.com/?path=/story/components--design-icons)

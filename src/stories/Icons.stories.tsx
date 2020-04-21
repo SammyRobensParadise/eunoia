@@ -10,15 +10,65 @@ import {
   LinkedinIcon,
   HomeIcon,
 } from '../components/Icons'
-export default {
-  title: 'Icons',
-}
-export const Right_Arrow = () => <RightArrow scalingFactor={2} color="#000000" />
-export const Left_Arrow = () => <LeftArrow scalingFactor={2} color="#000000" />
-export const Down_Arrow = () => <DownArrow scalingFactor={2} color="#000000" />
-export const Up_Arrow = () => <UpArrow scalingFactor={2} color="#000000" />
-export const Dribbble_Icon = () => <DribbbleIcon color="#000000" scalingFactor={1} />
-export const Github_Icon = () => <GithubIcon color="#000000" scalingFactor={1} />
-export const Medium_Icon = () => <MediumIcon color="#000000" scalingFactor={1} />
-export const Linkedin_Icon = () => <LinkedinIcon color="#000000" scalingFactor={1} />
-export const Home_Icon = () => <HomeIcon color="#000000" scalingFactor={1} />
+import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
+import { styleConfig } from '../utils/config'
+import styled from 'styled-components'
+
+const stories = storiesOf('Components', module)
+const styles = styleConfig.styles
+
+const Wrapper = styled.div`
+  padding: 2rem;
+  display: inline-block;
+`
+
+stories.add(
+  'Design Icons',
+  withInfo({
+    styles,
+    text: `
+    Default Iconn Usage:
+    ~~~jsx
+    <RighArrow scalingFactor={1} color="red" />
+    ~~~
+      | Props          | Description             | Type    |
+      |----------------|-------------------------|---------|
+      | color          |   color                 | string  |
+      | scaling factor | transparent background  | number  |
+      | offset         | left icon offset        | string  |
+    `,
+    inline: true,
+    source: true,
+  })(() => (
+    <div>
+      <Wrapper>
+        <RightArrow scalingFactor={2} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <LeftArrow scalingFactor={2} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <DownArrow scalingFactor={2} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <UpArrow scalingFactor={2} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <HomeIcon color="#000000" scalingFactor={2} />
+      </Wrapper>
+      <Wrapper>
+        <DribbbleIcon color="#000000" scalingFactor={2} />
+      </Wrapper>
+      <Wrapper>
+        <GithubIcon color="#000000" scalingFactor={2} />
+      </Wrapper>
+      <Wrapper>
+        <MediumIcon color="#000000" scalingFactor={2} />
+      </Wrapper>
+      <Wrapper>
+        <LinkedinIcon color="#000000" scalingFactor={2} />
+      </Wrapper>
+    </div>
+  )),
+)
