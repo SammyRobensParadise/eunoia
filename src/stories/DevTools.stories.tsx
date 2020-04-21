@@ -20,31 +20,101 @@ import {
   JQueryIcon,
   FirebaseIcon,
   CppIcon,
-  TsIcon
+  TsIcon,
 } from '../components/DevTools'
-export default {
-  title: 'Development Tool Icons',
-}
-export const React_Icon = () => <ReactIcon scalingFactor={1} color="#000000" />
-export const Python_Icon = () => <PythonIcon scalingFactor={1} color="#000000" />
-export const Webpack_Icon = () => <WebpackIcon scalingFactor={1} color="#000000" />
-export const Node_Icon = () => <NodeIcon scalingFactor={1} color="#000000" />
-export const JS_Icon = () => <JSIcon scalingFactor={1} color="#000000" />
-export const PHP_Icon = () => <PHPIcon scalingFactor={1} color="#000000" />
-export const Git_Large_Icon = () => <GitLargeIcon scalingFactor={1} color="#000000" />
-export const Jenkins_Icon = () => <JenkinsIcon scalingFactor={1} color="#000000" />
-export const K8s_Icon = () => <K8sIcon scalingFactor={1} color="#000000" />
-export const Docker_Icon = () => <DockerIcon scalingFactor={1} color="#000000" />
-export const Sass_Icon = () => <SassIcon scalingFactor={1} color="#000000" />
-export const Css_Icon = () => <CssIcon scalingFactor={1} color="#000000" />
-export const Html_Icon = () => <HtmlIcon scalingFactor={1} color="#000000" />
-export const Yarn_Icon = () => <YarnIcon scalingFactor={1} color="#000000" />
-export const Npm_Icon = () => <NpmIcon scalingFactor={1} color="#000000" />
-export const Ubuntu_Icon = () => <UbuntuIcon scalingFactor={1} color="#000000" />
-export const MySQL_Icon = () => <MySQLIcon scalingFactor={1} color="#000000" />
-export const JQuery_Icon = () => <JQueryIcon scalingFactor={1} color="#000000" />
-export const Firebase_Icon = () => <FirebaseIcon scalingFactor={1} color="#000000" />
-export const Cpp_Icon = () => <CppIcon scalingFactor={1} color="#000000" />
-export const Ts_Icon = () => <TsIcon scalingFactor={1} color="#000000" />
+import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
+import { styleConfig } from '../utils/config'
+import styled from 'styled-components'
+const stories = storiesOf('Components', module)
+const styles = styleConfig.styles
 
+const Wrapper = styled.div`
+  padding: 2rem;
+  display: inline-block;
+`
 
+stories.add(
+  'Development Icons',
+  withInfo({
+    styles,
+    text: `
+    Default Icon Usage:
+    ~~~jsx
+    <ReactIcon color="red" scalingFactor={1} />
+    ~~~
+      | Props          | Description             | Type    |
+      |----------------|-------------------------|---------|
+      | color          |   color                 | string  |
+      | scaling factor | transparent background  | number  |
+    `,
+    inline: true,
+    source: true,
+  })(() => (
+    <div>
+      <Wrapper>
+        <ReactIcon scalingFactor={1} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <PythonIcon scalingFactor={1} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <WebpackIcon scalingFactor={1} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <NodeIcon scalingFactor={1} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <PHPIcon scalingFactor={1} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <JSIcon scalingFactor={1} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <GitLargeIcon scalingFactor={1} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <JenkinsIcon scalingFactor={1} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <K8sIcon scalingFactor={1} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <DockerIcon scalingFactor={1} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <SassIcon scalingFactor={1} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <CssIcon scalingFactor={1} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <HtmlIcon scalingFactor={1} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <YarnIcon scalingFactor={1} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <NpmIcon scalingFactor={1} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <UbuntuIcon scalingFactor={1} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <MySQLIcon scalingFactor={1} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <FirebaseIcon scalingFactor={1} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <JQueryIcon scalingFactor={1} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <CppIcon scalingFactor={1} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <TsIcon scalingFactor={1} color="#000000" />
+      </Wrapper>
+    </div>
+  )),
+)

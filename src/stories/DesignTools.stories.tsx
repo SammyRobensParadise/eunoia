@@ -23,9 +23,9 @@ stories.add(
   withInfo({
     styles,
     text: `
-    Default Button Usage:
+    Default Iconn Usage:
     ~~~jsx
-    <PhotoshopIcon />
+    <PhotoshopIcon scalingFactor={1} color="red" />
     ~~~
       | Props          | Description             | Type    |
       |----------------|-------------------------|---------|
