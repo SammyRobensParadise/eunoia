@@ -5,33 +5,15 @@ import { CircleButton } from '../components/CircleButton'
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 
-const stories = storiesOf('Components', module)
+// untils
+import { styleConfig } from '../utils/config'
 
+const stories = storiesOf('Components', module)
+const styles = styleConfig.styles
 stories.add(
   'Buttons',
   withInfo({
-    styles: {
-      header: {
-        h1: {
-          marginRight: '20px',
-          fontSize: '25px',
-          display: 'inline',
-        },
-        body: {
-          paddingTop: 0,
-          paddingBottom: 0,
-        },
-        h2: {
-          display: 'inline',
-          color: '#999',
-        },
-      },
-      infoBody: {
-        backgroundColor: '#eee',
-        padding: '0px 5px',
-        lineHeight: '2',
-      },
-    },
+    styles,
     text: `
     Default Button Usage:
     ~~~jsx
@@ -82,10 +64,3 @@ stories.add(
     </div>
   )),
 )
-/*
-  primary?: boolean
-  transparent?: boolean
-  blackFont?: boolean
-  fontOverride?: string
-  height?: string
-  */

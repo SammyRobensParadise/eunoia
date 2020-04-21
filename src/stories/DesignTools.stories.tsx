@@ -11,18 +11,41 @@ import {
   MaterialDesignIcon,
   CreativecloudIcon,
 } from '../components/DesignTools'
-export default {
-  title: 'Design Tool Icons',
-}
-export const Photoshop_Icon = () => <PhotoshopIcon scalingFactor={1} color="#000000" />
-export const Illustrator_Icon = () => <IllustratorIcon scalingFactor={1} color="#000000" />
-export const Experience_Designer_Icon = () => (
-  <ExperienceDesignerIcon scalingFactor={1} color="#000000" />
+import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
+import { styleConfig } from '../utils/config'
+
+const stories = storiesOf('Components', module)
+const styles = styleConfig.styles
+
+stories.add(
+  'Design Icons',
+  withInfo({
+    styles,
+    text: `
+    Default Button Usage:
+    ~~~jsx
+    <PhotoshopIcon />
+    ~~~
+      | Props          | Description             | Type    |
+      |----------------|-------------------------|---------|
+      | color          |   color                 | string  |
+      | scaling factor | transparent background  | number  |
+    `,
+    inline: true,
+    source: true,
+  })(() => (
+    <div>
+      <PhotoshopIcon scalingFactor={1} color="#000000" />
+      <IllustratorIcon scalingFactor={1} color="#000000" />
+      <ExperienceDesignerIcon scalingFactor={1} color="#000000" />
+      <FigmaIcon scalingFactor={1} color="#000000" />
+      <SketchIcon scalingFactor={1} color="#000000" />
+      <InvisionIcon scalingFactor={1} color="#000000" />
+      <AftereffectsIcon scalingFactor={1} color="#000000" />
+      <IndesignIcon scalingFactor={1} color="#000000" />
+      <MaterialDesignIcon scalingFactor={1} color="#000000" />
+      <CreativecloudIcon scalingFactor={1} color="#000000" />
+    </div>
+  )),
 )
-export const Figma_Icon = () => <FigmaIcon scalingFactor={1} color="#000000" />
-export const Sketch_Icon = () => <SketchIcon scalingFactor={1} color="#000000" />
-export const Invision_Icon = () => <InvisionIcon scalingFactor={1} color="#000000" />
-export const Aftereffects_Icon = () => <AftereffectsIcon scalingFactor={1} color="#000000" />
-export const Indesign_Icon = () => <IndesignIcon scalingFactor={1} color="#000000" />
-export const Material_Design_Icon = () => <MaterialDesignIcon scalingFactor={1} color="#000000" />
-export const Creative_Cloud_Icon = () => <CreativecloudIcon scalingFactor={1} color="#000000" />
