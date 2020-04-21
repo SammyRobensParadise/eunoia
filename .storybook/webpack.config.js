@@ -1,4 +1,5 @@
 
+/*
 const path = require("path");
 
 module.exports = (baseConfig, env, config) => {
@@ -22,3 +23,4 @@ module.exports = (baseConfig, env, config) => {
 
   return config;
 };
+*/
