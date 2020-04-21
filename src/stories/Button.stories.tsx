@@ -1,22 +1,12 @@
 import React from 'react'
 import { action } from '@storybook/addon-actions'
 import { Button } from '../components/Button'
+import { CircleButton } from '../components/CircleButton'
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
+
 const stories = storiesOf('Components', module)
-export const FontOverride = () => (
-  <div>
-    <Button fontOverride="1rem" onClick={action('clicked')}>
-      1rem
-    </Button>
-    <Button fontOverride="2rem" onClick={action('clicked')}>
-      2rem
-    </Button>
-    <Button fontOverride="3rem" onClick={action('clicked')}>
-      3rem
-    </Button>
-  </div>
-)
+
 stories.add(
   'Buttons',
   withInfo({
@@ -70,8 +60,32 @@ stories.add(
         Transparent Background
       </Button>
       <br></br>
-      <FontOverride />
+      <Button fontOverride="1rem" onClick={action('clicked')}>
+        1rem
+      </Button>
+      <Button fontOverride="2rem" onClick={action('clicked')}>
+        2rem
+      </Button>
+      <Button fontOverride="3rem" onClick={action('clicked')}>
+        3rem
+      </Button>
+      <br></br>
+      <CircleButton />
+      <CircleButton transparent />
+      <CircleButton blackFont transparent />
+      <CircleButton blackFont />
+      <br></br>
+      <CircleButton height={'1rem'} />
+      <CircleButton height={'2rem'} />
+      <CircleButton height={'4rem'} />
+      <CircleButton height={'6rem'} />
     </div>
   )),
 )
-
+/*
+  primary?: boolean
+  transparent?: boolean
+  blackFont?: boolean
+  fontOverride?: string
+  height?: string
+  */
