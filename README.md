@@ -8,7 +8,7 @@
 
 ![Build](https://img.shields.io/github/workflow/status/SammyRobensParadise/eunoia/semantic-release?style=for-the-badge)
 ![Version](https://img.shields.io/npm/v/eunoia?style=for-the-badge)
-![Status](https://img.shields.io/website?down_color=red&down_message=offline&style=for-the-badge&up_color=green&up_message=online&url=https%3A%2F%2Fconfident-morse-bbc2f8.netlify.com%2F%3Fpath%3D%2Fstory%2Fbutton--default)
+![Status](https://img.shields.io/website?down_color=red&down_message=offline&style=for-the-badge&up_color=green&up_message=online&url=https%3A%2F%2Feunoia.netlify.com%2F%3Fpath%3D%2Fstory%2Fbutton--default)
 
 #### Versioning
 
@@ -18,7 +18,7 @@
 ## Storybook Link
 
 ![Storybook](https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png)
-[Storybook - Eunoia](https://confident-morse-bbc2f8.netlify.com/?path=/story/button--default)
+[Storybook - Eunoia](https://eunoia.netlify.com/?path=/story/button--default)
 
 ## NPM Link
 
@@ -45,7 +45,7 @@ import { Button } from "eunoia"
  * single dependency import.
  * 
  * Checkout the storybook
- * https://confident-morse-bbc2f8.netlify.app/
+ * https://eunoia.netlify.app/
  * for detailed documentation
  * 
  **/
@@ -64,7 +64,7 @@ render(){
 
 ### Button
 
-[Storybook Link](https://confident-morse-bbc2f8.netlify.com/?path=/story/components--buttons)
+[Storybook Link](https://eunoia.netlify.com/?path=/story/components--buttons)
 
 ```tsx
 const Default = () => <Button onClick={action('clicked')}>Default Button</Button>
@@ -80,7 +80,7 @@ const Default = () => <Button onClick={action('clicked')}>Default Button</Button
 
 ### Website Icons
 
-[Website Icons](https://confident-morse-bbc2f8.netlify.com/?path=/story/components--design-icons)
+[Website Icons](https://eunoia.netlify.com/?path=/story/components--design-icons)
 
 ```tsx
 const Right_Arrow = () => <RightArrow scalingFactor={2} color="#000000" />
@@ -108,7 +108,7 @@ const Right_Arrow = () => <RightArrow scalingFactor={2} color="#000000" />
 
 ### Design Icons
 
-[Design Icons](https://confident-morse-bbc2f8.netlify.com/?path=/story/components--design-icons)
+[Design Icons](https://eunoia.netlify.com/?path=/story/components--design-icons)
 
 ```tsx
 const Photoshop_Icon = () => <PhotoshopIcon color="#000000" scalingFactor={1} />
@@ -129,7 +129,7 @@ const Photoshop_Icon = () => <PhotoshopIcon color="#000000" scalingFactor={1} />
 
 ### Development Icons
 
-[Development Icons](https://confident-morse-bbc2f8.netlify.com/?path=/story/components--development-icons)
+[Development Icons](https://eunoia.netlify.com/?path=/story/components--development-icons)
 
 ```tsx
 const React_Icon = () => <ReactIcon scalingFactor={1} color="#000000" />
