@@ -135,7 +135,7 @@ const Photoshop_Icon = () => <PhotoshopIcon color="#000000" scalingFactor={1} />
 const React_Icon = () => <ReactIcon scalingFactor={1} color="#000000" />
 ```
 
-##### List of Dev Icons
+#### List of Dev Icons
 
 1. React
 2. Python
@@ -165,6 +165,26 @@ const React_Icon = () => <ReactIcon scalingFactor={1} color="#000000" />
   color?: string
   offset?: string
   scalingFactor?: number | null
+```
+### Colors UIStyle:
+[Theme Colors](https://eunoia.netlify.com/?path=/story/components--colors)
+
+```js
+import { UIStyle } from 'eunoia'
+
+// use as required
+const Gld = UIStyle.UIColors.gold
+```
+### List of Colors:
+```ts
+  UIColors: {
+    white: '#FFFFFF',
+    lightGrey: '#00000029',
+    black: '#000000',
+    gold: '#E1A87A',
+    darkGrey: '#212121',
+    mediumGrey: '#5D5D5D',
+  }
 ```
 
 ## More components coming soon
