@@ -3,7 +3,8 @@ import { Menu } from '../components/Menu'
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 import { styleConfig } from '../utils/config'
-import styled from 'styled-components'
+
+// constants
 const stories = storiesOf('Components', module)
 const styles = styleConfig.styles
 const config = {
@@ -13,8 +14,15 @@ const config = {
   DisableMobile: false,
   fontOverride: 'none',
   boldText: false,
+  spacing: 0,
+  row: true,
+  breakpoints: {xs: true,}
 }
-const options = [{}]
+const options = [
+  { title: 'Home', link: '#', newTab: false, Icon: <div>icon</div> },
+  { title: 'About', link: '#', newTab: false, Icon: <div>icon</div> },
+  { title: 'Articles', link: '#', newTab: false, Icon: <div>icon</div> },
+]
 stories.add(
   'Menu',
   withInfo({
