@@ -33,6 +33,33 @@ Install eunoia
 npm i eunoia
 ```
 
+## It is recommended that this library be used alongside [styled components](https://styled-components.com/) and [Material UI](https://material-ui.com/)
+
+## Usage
+```js
+// import
+import { Button } from "eunoia"
+/**
+ * Every component is accessible directly via the
+ * universal import "eunoia" designed to be a
+ * single dependency import.
+ * 
+ * Checkout the storybook
+ * https://confident-morse-bbc2f8.netlify.app/
+ * for detailed documentation
+ * 
+ **/
+
+// use!
+render(){
+  return <Button>Hello from εὔνοιᾰ!</Button>
+}
+```
+#### Source: `Typescript`
+#### API: `Javascript/Typescript`
+#### Code Style: <i>Prettier</i>
+#### Syntax: ES6^
+
 ## What is available
 
 ### Button
@@ -58,7 +85,9 @@ const Default = () => <Button onClick={action('clicked')}>Default Button</Button
 ```tsx
 const Right_Arrow = () => <RightArrow scalingFactor={2} color="#000000" />
 ```
+
 #### List of Website Icons
+
 1. RightArrow
 2. LeftArrow
 3. DownArrow
@@ -70,20 +99,23 @@ const Right_Arrow = () => <RightArrow scalingFactor={2} color="#000000" />
 9. Home
 
 ### Icon Props
+
 ```ts
   color?: string
   offset?: string
   scalingFactor?: number
 ```
 
-
 ### Design Icons
+
 [Design Icons](https://confident-morse-bbc2f8.netlify.com/?path=/story/components--design-icons)
 
 ```tsx
 const Photoshop_Icon = () => <PhotoshopIcon color="#000000" scalingFactor={1} />
 ```
+
 #### List of Design Icons
+
 1. Photoshop
 2. Illustrator
 3. Experience Designer
@@ -104,6 +136,7 @@ const React_Icon = () => <ReactIcon scalingFactor={1} color="#000000" />
 ```
 
 ##### List of Dev Icons
+
 1. React
 2. Python
 3. Webpack
@@ -135,6 +168,7 @@ const React_Icon = () => <ReactIcon scalingFactor={1} color="#000000" />
 ```
 
 ## More components coming soon
+
 🤟💻🔨
 :)
 
