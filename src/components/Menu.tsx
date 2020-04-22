@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Box, Container, Grid } from '@material-ui/core'
+import { BrowserRouter as Router, NavLink } from 'react-router-dom'
 export interface MenuProps {
   config: {
     fontColor?: string
@@ -18,7 +19,7 @@ export interface MenuProps {
   }
   options?: Array<{
     title?: string
-    link?: string
+    link?: string | undefined | any
     newTab?: boolean
   }>
 }
@@ -31,11 +32,11 @@ const MenuList = ({ options, config }: MenuProps) => {
   const MenuToRender = options?.map((item) => (
     <Grid
       spacing={config.spacing}
-      xs={config.breakpoints.xs ? 6 : undefined}
+      xs={config.breakpoints.xs ? 1 : undefined}
       sm={config.breakpoints.sm ? 6 : undefined}
       xl={config.breakpoints.xl ? 12 : undefined}
     >
-      {item.title}
+      <NavLink to={item.link}>{item.title}</NavLink>
     </Grid>
   ))
   return (
@@ -58,12 +59,16 @@ export class Menu extends Component<MenuProps, MenuState> {
   }
   render() {
     const { options, config } = this.props
-    return (
-      <Box>
-        <Container>
-          <MenuList options={options} config={config} />
-        </Container>
-      </Box>
+    return config.hide ? (
+      <div className="hidden-menu" />
+    ) : (
+      <Router>
+        <Box>
+          <Container>
+            <MenuList options={options} config={config} />
+          </Container>
+        </Box>
+      </Router>
     )
   }
 }
