@@ -24,6 +24,8 @@ export interface MenuProps {
     title?: string | undefined
     link?: string | undefined | any
     newTab?: boolean
+    icon: any
+    main?: boolean | undefined
   }>
 }
 
@@ -34,6 +36,16 @@ interface MenuState {
 interface MenuItemProps {
   font?: string | undefined
   fontColor?: string | undefined
+}
+
+interface MenuNodeProps {
+  item: {
+    title?: string | undefined
+    link?: string | undefined | any
+    newTab?: boolean | undefined
+    icon: any
+    main?: boolean | undefined
+  }
 }
 const MenuContainer = styled(Grid)`
   position: relative;
@@ -84,7 +96,9 @@ const MenuItem = styled.div<MenuItemProps>`
     text-decoration: none !important;
   }
 `
-
+const MenuNode = ({ item }: MenuNodeProps) => {
+  return item.main && item.icon ? item.icon : item.title
+}
 const MenuList = ({ options, config }: MenuProps) => {
   const MenuToRender = options?.map((item) => (
     <Grid
@@ -95,7 +109,7 @@ const MenuList = ({ options, config }: MenuProps) => {
     >
       <MenuLink to={item.link} font={config.fontOverride} fontColor={config.fontColor}>
         <MenuItem font={config.fontOverride} fontColor={config.fontColor}>
-          {item.title}
+          <MenuNode item={item} />
         </MenuItem>
       </MenuLink>
     </Grid>
