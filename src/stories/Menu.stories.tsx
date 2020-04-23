@@ -3,15 +3,17 @@ import { Menu } from '../components/Menu'
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 import { styleConfig } from '../utils/config'
+import {UIStyle} from '../constants/constants'
+import '../css/styles/styles.css'
 // constants
 const stories = storiesOf('Components', module)
 const styles = styleConfig.styles
 const config = {
-  fontColor: 'white',
+  fontColor: UIStyle.UIColors.black,
   activeSection: 'home',
   hide: false,
   DisableMobile: false,
-  fontOverride: 'none',
+  fontOverride: 'Helvetica Neue',
   boldText: false,
   spacing: 0,
   row: true,

@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { Box, Container, Grid } from '@material-ui/core'
 import { BrowserRouter as Router, NavLink } from 'react-router-dom'
+import {UIStyle} from '../constants/constants'
 import styled from 'styled-components'
+
 export interface MenuProps {
   config: {
     fontColor?: string
@@ -19,7 +21,7 @@ export interface MenuProps {
     }
   }
   options?: Array<{
-    title?: string
+    title?: string | undefined
     link?: string | undefined | any
     newTab?: boolean
   }>
@@ -28,12 +30,19 @@ export interface MenuProps {
 interface MenuState {
   activeSection?: string
 }
-const MenuContainer = styled.ul`
 
+interface MenuItemProps {
+  font?: string | undefined
+  fontColor?: string | undefined
+}
+const MenuContainer = styled.div`
   display: inline-block;
 `
-const MenuItem = styled.li`
-
+const MenuItem = styled.div<MenuItemProps>`
+  font-family: ${(p) => (p.font ? p.font : 'Arial')};
+  font-weight: 400;
+  color: ${p=> p.color? p.color: UIStyle.UIColors.black};
+  font-size: 26px;
 `
 const MenuList = ({ options, config }: MenuProps) => {
   const MenuToRender = options?.map((item) => (
@@ -43,7 +52,11 @@ const MenuList = ({ options, config }: MenuProps) => {
       sm={config.breakpoints.sm ? 6 : undefined}
       xl={config.breakpoints.xl ? 12 : undefined}
     >
-      <NavLink to={item.link}>{item.title}</NavLink>
+      <NavLink to={item.link}>
+        <MenuItem font={config.fontOverride} fontColor={config.fontColor}>
+          {item.title}
+        </MenuItem>
+      </NavLink>
     </Grid>
   ))
   return (
