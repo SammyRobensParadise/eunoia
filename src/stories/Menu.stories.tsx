@@ -18,9 +18,12 @@ const config = {
   breakpoints: { xs: true },
 }
 const options = [
-  { title: 'Home', link: "/#" , newTab: false, Icon: <div>icon</div> },
-  { title: 'About', link: "/#" , newTab: false, Icon: <div>icon</div> },
-  { title: 'Articles', link: "/#", newTab: false, Icon: <div>icon</div> },
+  { title: 'Home', link: '/#', newTab: false, Icon: <div>icon</div> },
+  { title: 'About', link: '/#', newTab: false, Icon: <div>icon</div> },
+  { title: 'Articles', link: '/#', newTab: false, Icon: <div>icon</div> },
+  { title: 'Design', link: '/#', newTab: false, Icon: <div>icon</div> },
+  { title: 'Development', link: '/#', newTab: false, Icon: <div>icon</div> },
+  { title: 'Experience', link: '/#', newTab: false, Icon: <div>icon</div> },
 ]
 stories.add(
   'Menu',
@@ -32,8 +35,8 @@ stories.add(
     inline: true,
     source: false,
   })(() => (
-      <div>
-        <Menu config={config} options={options} />
-      </div>
+    <div>
+      <Menu config={config} options={options} />
+    </div>
   )),
 )

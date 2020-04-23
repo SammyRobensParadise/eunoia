@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Box, Container, Grid } from '@material-ui/core'
 import { BrowserRouter as Router, NavLink } from 'react-router-dom'
+import styled from 'styled-components'
 export interface MenuProps {
   config: {
     fontColor?: string
@@ -27,7 +28,13 @@ export interface MenuProps {
 interface MenuState {
   activeSection?: string
 }
+const MenuContainer = styled.ul`
 
+  display: inline-block;
+`
+const MenuItem = styled.li`
+
+`
 const MenuList = ({ options, config }: MenuProps) => {
   const MenuToRender = options?.map((item) => (
     <Grid
@@ -41,7 +48,7 @@ const MenuList = ({ options, config }: MenuProps) => {
   ))
   return (
     <Grid container spacing={config.spacing}>
-      {MenuToRender}
+      <MenuContainer>{MenuToRender}</MenuContainer>
     </Grid>
   )
 }
