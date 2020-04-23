@@ -37,15 +37,33 @@ interface MenuItemProps {
 }
 const MenuContainer = styled(Grid)`
   position: relative;
-  /* display: inline-flex; */
+  display: flex;
 `
 const MenuLink = styled(NavLink)<MenuItemProps>`
   font-family: ${(p) => (p.font ? p.font : 'Arial')};
   font-weight: bold;
   text-decoration: none;
-  &:hover {
-    text-decoration: underline;
-    text-decoration-color: ${(p) => p.fontColor};
+
+  color: ${(p) => p.fontColor};
+  letter-spacing: 0rem;
+  display: inline-block;
+  position: relative;
+
+  &:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: ${(p) => p.fontColor};
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  &:hover:after {
+    width: 100%;
+    left: 0;
   }
 `
 const MenuItem = styled.div<MenuItemProps>`
