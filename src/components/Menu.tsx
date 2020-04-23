@@ -35,9 +35,9 @@ interface MenuItemProps {
   font?: string | undefined
   fontColor?: string | undefined
 }
-const MenuContainer = styled.div`
+const MenuContainer = styled(Grid)`
   position: relative;
-  display: inline-flex;
+  /* display: inline-flex; */
 `
 const MenuLink = styled(NavLink)<MenuItemProps>`
   font-family: ${(p) => (p.font ? p.font : 'Arial')};
@@ -65,22 +65,6 @@ const MenuItem = styled.div<MenuItemProps>`
   &:visited {
     text-decoration: none !important;
   }
-  &:after {
-    background: none repeat scroll 0 0 transparent;
-    bottom: 0;
-    content: '';
-    display: block;
-    height: 2px;
-    left: 50%;
-    position: absolute;
-    background: #fff;
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 0;
-  }
-  &:hover:after {
-    width: 100%;
-    left: 0;
-  }
 `
 
 const MenuList = ({ options, config }: MenuProps) => {
@@ -88,8 +72,7 @@ const MenuList = ({ options, config }: MenuProps) => {
     <Grid
       item
       xs={config.breakpoints.xs ? 6 : undefined}
-      sm={config.breakpoints.sm ? 6 : undefined}
-      xl={config.breakpoints.xl ? 6 : undefined}
+      sm={config.breakpoints.sm ? 3 : undefined}
       alignItems="center"
     >
       <MenuLink to={item.link} font={config.fontOverride} fontColor={config.fontColor}>
@@ -101,7 +84,7 @@ const MenuList = ({ options, config }: MenuProps) => {
   ))
   return (
     <Grid container spacing={config.spacing} alignItems="center">
-      <MenuContainer>{MenuToRender}</MenuContainer>
+      <MenuContainer direction={'row'}>{MenuToRender}</MenuContainer>
     </Grid>
   )
 }
