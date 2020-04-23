@@ -29,11 +29,11 @@ const options = [
     icon: <HomeIcon color={UIStyle.UIColors.black} scalingFactor={1} />,
     main: true,
   },
-  { title: 'About', link: '/#', newTab: false, icon: <div>icon</div> },
-  { title: 'Articles', link: '/#', newTab: false, icon: <div>icon</div> },
-  { title: 'Design', link: '/#', newTab: false, icon: <div>icon</div> },
-  { title: 'Development', link: '/#', newTab: false, icon: <div>icon</div> },
-  { title: 'Experience', link: '/#', newTab: false, icon: <div>icon</div> },
+  { title: 'About', link: '/#', newTab: false},
+  { title: 'Articles', link: '/#', newTab: false },
+  { title: 'Design', link: '/#', newTab: false },
+  { title: 'Development', link: '/#', newTab: false },
+  { title: 'Experience', link: '/#', newTab: false },
 ]
 stories.add(
   'Menu',

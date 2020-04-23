@@ -14,6 +14,7 @@ export interface MenuProps {
     boldText?: boolean
     spacing?: any
     row?: boolean
+    fontSize?: string
     breakpoints: {
       xs?: boolean
       sm?: boolean
@@ -24,7 +25,7 @@ export interface MenuProps {
     title?: string | undefined
     link?: string | undefined | any
     newTab?: boolean
-    icon: any
+    icon?: any
     main?: boolean | undefined
   }>
 }
@@ -36,6 +37,8 @@ interface MenuState {
 interface MenuItemProps {
   font?: string | undefined
   fontColor?: string | undefined
+  fontSize?: string
+  main?: boolean | undefined
 }
 
 interface MenuNodeProps {
@@ -43,14 +46,20 @@ interface MenuNodeProps {
     title?: string | undefined
     link?: string | undefined | any
     newTab?: boolean | undefined
-    icon: any
+    icon?: any
     main?: boolean | undefined
   }
 }
+
+interface MenuItemWrapperProps {
+  main?: boolean | undefined
+}
+
 const MenuContainer = styled(Grid)`
   position: relative;
   display: flex;
 `
+
 const MenuLink = styled(NavLink)<MenuItemProps>`
   font-family: ${(p) => (p.font ? p.font : 'Arial')};
   font-weight: bold;
@@ -83,7 +92,7 @@ const MenuItem = styled.div<MenuItemProps>`
   font-weight: bold;
   text-decoration: none !important;
   color: ${(p) => (p.color ? p.color : UIStyle.UIColors.black)};
-  font-size: 26px;
+  font-size: ${(p) => (p.fontSize ? p.fontSize : '26px')};
   padding-left: 20px;
   padding-right: 20px;
   &:link {
@@ -96,23 +105,32 @@ const MenuItem = styled.div<MenuItemProps>`
     text-decoration: none !important;
   }
 `
+const MenuItemWrapper = styled(Grid)<MenuItemWrapperProps>`
+  padding-right: ${(p) => (p.main ? '200px' : '0px')};
+`
+
 const MenuNode = ({ item }: MenuNodeProps) => {
-  return item.main && item.icon ? item.icon : item.title
+  return item.icon ? item.icon : item.title
 }
 const MenuList = ({ options, config }: MenuProps) => {
   const MenuToRender = options?.map((item) => (
-    <Grid
+    <MenuItemWrapper
       item
       xs={config.breakpoints.xs ? 6 : undefined}
       sm={config.breakpoints.sm ? 3 : undefined}
       alignItems="center"
+      main={item.main}
     >
       <MenuLink to={item.link} font={config.fontOverride} fontColor={config.fontColor}>
-        <MenuItem font={config.fontOverride} fontColor={config.fontColor}>
+        <MenuItem
+          font={config.fontOverride}
+          fontColor={config.fontColor}
+          fontSize={config.fontSize}
+        >
           <MenuNode item={item} />
         </MenuItem>
       </MenuLink>
-    </Grid>
+    </MenuItemWrapper>
   ))
   return (
     <Grid container spacing={config.spacing} alignItems="center">
@@ -138,11 +156,9 @@ export class Menu extends Component<MenuProps, MenuState> {
       <div className="hidden-menu" />
     ) : (
       <Router>
-        <Box>
-          <Container>
+          <Container disableGutters>
             <MenuList options={options} config={config} />
           </Container>
-        </Box>
       </Router>
     )
   }
