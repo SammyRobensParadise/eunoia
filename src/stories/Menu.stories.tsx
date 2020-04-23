@@ -16,7 +16,7 @@ const config = {
   DisableMobile: false,
   fontOverride: 'Helvetica Neue',
   boldText: false,
-  spacing: 1,
+  spacing: 0,
   row: true,
   breakpoints: { xs: true },
 }

@@ -36,6 +36,7 @@ interface MenuItemProps {
   fontColor?: string | undefined
 }
 const MenuContainer = styled.div`
+  position: relative;
   display: inline-flex;
 `
 const MenuLink = styled(NavLink)<MenuItemProps>`
@@ -64,6 +65,22 @@ const MenuItem = styled.div<MenuItemProps>`
   &:visited {
     text-decoration: none !important;
   }
+  &:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #fff;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  &:hover:after {
+    width: 100%;
+    left: 0;
+  }
 `
 
 const MenuList = ({ options, config }: MenuProps) => {
@@ -83,7 +100,7 @@ const MenuList = ({ options, config }: MenuProps) => {
     </Grid>
   ))
   return (
-    <Grid container spacing={config.spacing}>
+    <Grid container spacing={config.spacing} alignItems="center">
       <MenuContainer>{MenuToRender}</MenuContainer>
     </Grid>
   )
