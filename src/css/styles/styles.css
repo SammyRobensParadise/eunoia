@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial,
+    'Lucida Grande', sans-serif;
+  src: url('../fonts/Helvetica\ Neu\ Bold.ttf');
+  src: url('../fonts/HelveticaNeue.ttf');
+  src: url('../fonts/HelveticaNeue\ BlackCond.ttf');
+  src: url('../fonts/HelveticaNeue\ Light.ttf');
+  src: url('../fonts/HelveticaNeue\ Medium.ttf');
+  src: url('../fonts/HelveticaNeue\ Thin.ttf');
+}
