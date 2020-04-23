@@ -33,7 +33,7 @@ stories.add(
   withInfo({
     styles,
     text: `
-    Default Iconn Usage:
+    Default Menu
     `,
     inline: true,
     source: false,
