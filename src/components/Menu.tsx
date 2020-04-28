@@ -155,21 +155,31 @@ const MenuListMobile = ({ options, config }: MenuProps) => {
   const handleClose = () => {
     setAnchorEl(null)
   }
+  const mobileMenuToRender = options?.map((item) => (
+    <MenuLink to={item.link} font={config.fontOverride} fontColor={config.fontColor}>
+      <MenuItemMobile
+        //   font={config.fontOverride}
+        //  fontColor={config.fontColor}
+        // fontSize={config.fontSize}
+        onClick={handleClose}
+      >
+        <MenuNode item={item} />
+      </MenuItemMobile>
+    </MenuLink>
+  ))
   return (
     <div>
-      <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+      <Button aria-controls="mobile-menu" aria-haspopup="true" onClick={handleClick}>
         Open Menu
       </Button>
       <MenuMobile
-        id="simple-menu"
+        id="mobile-menu"
         anchorEl={anchorEl}
         keepMounted
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItemMobile onClick={handleClose}>Profile</MenuItemMobile>
-        <MenuItemMobile onClick={handleClose}>My account</MenuItemMobile>
-        <MenuItemMobile onClick={handleClose}>Logout</MenuItemMobile>
+        {mobileMenuToRender}
       </MenuMobile>
     </div>
   )
