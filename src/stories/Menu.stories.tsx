@@ -13,7 +13,7 @@ const styles = styleConfig.styles
 const config = {
   fontColor: UIStyle.UIColors.black,
   activeSection: 'Home',
-  hide: false,
+  hideOnMobile: true,
   DisableMobile: false,
   fontOverride: 'Helvetica Neue',
   boldText: false,

@@ -1,5 +1,11 @@
 import React, { Component } from 'react'
-import { Box, Container, Grid } from '@material-ui/core'
+import {
+  Container,
+  Grid,
+  Button,
+  Menu as MenuMobile,
+  MenuItem as MenuItemMobile,
+} from '@material-ui/core'
 import { BrowserRouter as Router, NavLink } from 'react-router-dom'
 import { UIStyle } from '../constants/constants'
 import styled from 'styled-components'
@@ -8,7 +14,7 @@ export interface MenuProps {
   config: {
     fontColor?: string
     activeSection?: string
-    hide?: boolean
+    hideOnMobile?: boolean
     DisableMobile?: boolean
     fontOverride?: string
     boldText?: boolean
@@ -57,7 +63,8 @@ interface MenuItemWrapperProps {
 
 const MenuContainer = styled(Grid)`
   position: relative;
-  display: flex;
+  display: inline-block;
+  margin: 0 auto;
 `
 
 const MenuLink = styled(NavLink)<MenuItemProps>`
@@ -106,6 +113,7 @@ const MenuItem = styled.div<MenuItemProps>`
   }
 `
 const MenuItemWrapper = styled(Grid)<MenuItemWrapperProps>`
+  display: inline-block;
   padding-right: ${(p) => (p.main ? '200px' : '0px')};
 `
 
@@ -119,7 +127,6 @@ const MenuList = ({ options, config }: MenuProps) => {
       xs={config.breakpoints.xs ? 6 : undefined}
       sm={config.breakpoints.sm ? 3 : undefined}
       alignItems="center"
-      main={item.main}
     >
       <MenuLink to={item.link} font={config.fontOverride} fontColor={config.fontColor}>
         <MenuItem
@@ -138,6 +145,35 @@ const MenuList = ({ options, config }: MenuProps) => {
     </Grid>
   )
 }
+const MenuListMobile = ({ options, config }: MenuProps) => {
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget)
+  }
+
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
+  return (
+    <div>
+      <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+        Open Menu
+      </Button>
+      <MenuMobile
+        id="simple-menu"
+        anchorEl={anchorEl}
+        keepMounted
+        open={Boolean(anchorEl)}
+        onClose={handleClose}
+      >
+        <MenuItemMobile onClick={handleClose}>Profile</MenuItemMobile>
+        <MenuItemMobile onClick={handleClose}>My account</MenuItemMobile>
+        <MenuItemMobile onClick={handleClose}>Logout</MenuItemMobile>
+      </MenuMobile>
+    </div>
+  )
+}
 
 export class Menu extends Component<MenuProps, MenuState> {
   static defaultProps = {
@@ -152,13 +188,20 @@ export class Menu extends Component<MenuProps, MenuState> {
   }
   render() {
     const { options, config } = this.props
-    return config.hide ? (
-      <div className="hidden-menu" />
+    const mobileBreakpoint = window.innerWidth < 850
+    return config.hideOnMobile && mobileBreakpoint ? (
+      <div className="hidden-menu">
+        <Router>
+          <Container disableGutters>
+            <MenuListMobile options={options} config={config} />
+          </Container>
+        </Router>
+      </div>
     ) : (
       <Router>
-          <Container disableGutters>
-            <MenuList options={options} config={config} />
-          </Container>
+        <Container disableGutters>
+          <MenuList options={options} config={config} />
+        </Container>
       </Router>
     )
   }
