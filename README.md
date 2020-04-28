@@ -99,6 +99,7 @@ const Right_Arrow = () => <RightArrow scalingFactor={2} color="#000000" />
 9. Home
 10. Menu
 
+
 ### Icon Props
 
 ```ts
