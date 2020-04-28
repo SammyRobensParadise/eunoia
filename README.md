@@ -97,6 +97,7 @@ const Right_Arrow = () => <RightArrow scalingFactor={2} color="#000000" />
 7. Medium
 8. Linkedin
 9. Home
+10. Menu
 
 ### Icon Props
 

@@ -53,6 +53,11 @@ type HomeIconProps = {
   scalingFactor: number
 }
 
+type MenuIconProps = {
+  color: string
+  scalingFactor: number
+}
+
 export const RightArrow = styled.i<RightArrowProps>`
   position: relative;
   display: block;
@@ -286,6 +291,27 @@ export const HomeIcon = ({ color, scalingFactor }: HomeIconProps) => {
           data-name="Icon material-home"
           d="M15,30V21h6v9h7.5V18H33L18,4.5,3,18H7.5V30Z"
           transform="translate(-3 -4.5)"
+          fill={color}
+        />
+      </svg>
+    </div>
+  )
+}
+
+export const MenuIcon = ({ color, scalingFactor }: MenuIconProps) => {
+  return (
+    <div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={`${scalingFactor ? 36 * scalingFactor : 36}`}
+        height={`${scalingFactor ? 24 * scalingFactor : 24}`}
+        viewBox="0 0 36 24"
+      >
+        <path
+          id="Icon_material-menu"
+          data-name="Icon material-menu"
+          d="M4.5,33h36V29H4.5Zm0-10h36V19H4.5Zm0-14v4h36V9Z"
+          transform="translate(-4.5 -9)"
           fill={color}
         />
       </svg>

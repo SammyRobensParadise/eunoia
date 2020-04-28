@@ -9,6 +9,7 @@ import {
   MediumIcon,
   LinkedinIcon,
   HomeIcon,
+  MenuIcon
 } from '../components/Icons'
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
@@ -68,6 +69,9 @@ stories.add(
       </Wrapper>
       <Wrapper>
         <LinkedinIcon color="#000000" scalingFactor={2} />
+      </Wrapper>
+      <Wrapper>
+        <MenuIcon color="#000000" scalingFactor={2} />
       </Wrapper>
     </div>
   )),

@@ -1,3 +1,5 @@
+// Imports
+
 import React, { Component } from 'react'
 import {
   Container,
@@ -9,6 +11,8 @@ import {
 import { BrowserRouter as Router, NavLink } from 'react-router-dom'
 import { UIStyle } from '../constants/constants'
 import styled from 'styled-components'
+
+// Interfaces
 
 export interface MenuProps {
   config: {
@@ -60,6 +64,8 @@ interface MenuNodeProps {
 interface MenuItemWrapperProps {
   main?: boolean | undefined
 }
+
+// Styles CSS
 
 const MenuContainer = styled(Grid)`
   position: relative;
@@ -117,9 +123,22 @@ const MenuItemWrapper = styled(Grid)<MenuItemWrapperProps>`
   padding-right: ${(p) => (p.main ? '200px' : '0px')};
 `
 
+// Components
+
+/**
+ * Menu node desktop component
+ * @param MenuNodeProps
+ * @returns `Boolean`
+ */
 const MenuNode = ({ item }: MenuNodeProps) => {
   return item.icon ? item.icon : item.title
 }
+
+/**
+ * Menu list desktop component
+ * @param MenuProps
+ * @returns `tsx`
+ */
 const MenuList = ({ options, config }: MenuProps) => {
   const MenuToRender = options?.map((item) => (
     <MenuItemWrapper
@@ -145,9 +164,19 @@ const MenuList = ({ options, config }: MenuProps) => {
     </Grid>
   )
 }
+
+/**
+ * Mobile Menu Item List Component
+ * @param MenuProps
+ * @returns `tsx`
+ */
 const MenuListMobile = ({ options, config }: MenuProps) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
 
+  /**
+   * click handler
+   * @param event 
+   */
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget)
   }
@@ -155,6 +184,7 @@ const MenuListMobile = ({ options, config }: MenuProps) => {
   const handleClose = () => {
     setAnchorEl(null)
   }
+
   const mobileMenuToRender = options?.map((item) => (
     <MenuLink to={item.link} font={config.fontOverride} fontColor={config.fontColor}>
       <MenuItemMobile
@@ -170,7 +200,7 @@ const MenuListMobile = ({ options, config }: MenuProps) => {
   return (
     <div>
       <Button aria-controls="mobile-menu" aria-haspopup="true" onClick={handleClick}>
-        Open Menu
+        Menu
       </Button>
       <MenuMobile
         id="mobile-menu"
@@ -185,6 +215,9 @@ const MenuListMobile = ({ options, config }: MenuProps) => {
   )
 }
 
+/**
+ * @class `Menu`
+ */
 export class Menu extends Component<MenuProps, MenuState> {
   static defaultProps = {
     activeSection: null,
