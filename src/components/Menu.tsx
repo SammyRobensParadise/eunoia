@@ -11,6 +11,7 @@ import {
 import { BrowserRouter as Router, NavLink } from 'react-router-dom'
 import { UIStyle } from '../constants/constants'
 import styled from 'styled-components'
+import { MenuIcon } from './Icons'
 
 // Interfaces
 
@@ -122,7 +123,24 @@ const MenuItemWrapper = styled(Grid)<MenuItemWrapperProps>`
   display: inline-block;
   padding-right: ${(p) => (p.main ? '200px' : '0px')};
 `
-
+const MenuItemMobileOverride = styled(MenuItemMobile)<MenuItemProps>`
+  font-family: ${(p) => (p.font ? p.font : 'Arial')};
+  font-weight: bold;
+  text-decoration: none !important;
+  color: ${(p) => (p.color ? p.color : UIStyle.UIColors.black)};
+  font-size: ${(p) => (p.fontSize ? '18px' : '18px')};
+  padding-left: 20px;
+  padding-right: 20px;
+  &:link {
+    text-decoration: none !important;
+  }
+  &:active {
+    text-decoration: none !important;
+  }
+  &:visited {
+    text-decoration: none !important;
+  }
+`
 // Components
 
 /**
@@ -175,7 +193,7 @@ const MenuListMobile = ({ options, config }: MenuProps) => {
 
   /**
    * click handler
-   * @param event 
+   * @param event
    */
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget)
@@ -187,20 +205,20 @@ const MenuListMobile = ({ options, config }: MenuProps) => {
 
   const mobileMenuToRender = options?.map((item) => (
     <MenuLink to={item.link} font={config.fontOverride} fontColor={config.fontColor}>
-      <MenuItemMobile
-        //   font={config.fontOverride}
-        //  fontColor={config.fontColor}
-        // fontSize={config.fontSize}
+      <MenuItemMobileOverride
+        font={config.fontOverride}
+        fontColor={config.fontColor}
+        fontSize={config.fontSize}
         onClick={handleClose}
       >
         <MenuNode item={item} />
-      </MenuItemMobile>
+      </MenuItemMobileOverride>
     </MenuLink>
   ))
   return (
     <div>
       <Button aria-controls="mobile-menu" aria-haspopup="true" onClick={handleClick}>
-        Menu
+        <MenuIcon color={UIStyle.UIColors.black} scalingFactor={1} />
       </Button>
       <MenuMobile
         id="mobile-menu"
