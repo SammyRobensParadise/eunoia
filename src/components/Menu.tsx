@@ -26,6 +26,7 @@ export interface MenuProps {
     spacing?: any
     row?: boolean
     fontSize?: string
+    mobilebreakPoint?: number | undefined
     breakpoints: {
       xs?: boolean
       sm?: boolean
@@ -276,7 +277,8 @@ export class Menu extends React.PureComponent<MenuProps, MenuState> {
   }
   render() {
     const { options, config } = this.props
-    const mobileBreakpoint = window.innerWidth < 850
+    const breakpointFromProps = config.mobilebreakPoint ? config.mobilebreakPoint : 850
+    const mobileBreakpoint = window.innerWidth < breakpointFromProps
     return config.hideOnMobile && mobileBreakpoint ? (
       <div className="hidden-menu">
         <Router>

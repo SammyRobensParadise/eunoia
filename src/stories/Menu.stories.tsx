@@ -19,6 +19,7 @@ const config = {
   boldText: false,
   spacing: 0,
   row: true,
+  mobileBreakpoint: 850,
   breakpoints: { xs: true },
 }
 const options = [
@@ -57,6 +58,7 @@ stories.add(
       spacing?: any
       row?: boolean
       fontSize?: string
+      mobileBreakpoint: number
       breakpoints: {
         xs?: boolean
         sm?: boolean

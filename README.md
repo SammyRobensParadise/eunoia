@@ -241,6 +241,7 @@ See the [Menu Storybook](https://eunoia.netlify.com/?path=/story/components--men
     spacing?: any
     row?: boolean
     fontSize?: string
+    mobileBreakpoint?: number | undefined
     breakpoints: {
       xs?: boolean
       sm?: boolean
