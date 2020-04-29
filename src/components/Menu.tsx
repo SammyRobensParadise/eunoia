@@ -1,6 +1,6 @@
 // Imports
 
-import React, { Component } from 'react'
+import React from 'react'
 import {
   Container,
   Grid,
@@ -176,7 +176,7 @@ const MenuItemMobileOverride = styled(MenuItemMobile)<MenuItemProps>`
  * @returns `Boolean`
  */
 const MenuNode = ({ item }: MenuNodeProps) => {
-  return item.icon ? item.icon: item.title
+  return item.icon ? item.icon : item.title
 }
 
 /**
@@ -263,7 +263,7 @@ const MenuListMobile = ({ options, config }: MenuProps) => {
 /**
  * @class `Menu`
  */
-export class Menu extends Component<MenuProps, MenuState> {
+export class Menu extends React.PureComponent<MenuProps, MenuState> {
   static defaultProps = {
     activeSection: null,
   }
