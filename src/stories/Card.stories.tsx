@@ -10,10 +10,12 @@ import '../css/styles/styles.css'
 const stories = storiesOf('Components', module)
 const styles = styleConfig.styles
 const config = {
-    shouldRender: true,
-    content: `sample text`,
-    title: `card title`,
-    imageURL: 'https://i.ibb.co/chZ8Ww8/envrender.png'
+  shouldRender: true,
+  content: `sample text`,
+  title: `card title`,
+  imageURL: 'https://i.ibb.co/r2NBmKn/intensif-eye-render-shadow-4.png',
+  fontOverride: 'Helvetica Neue',
+  link: '/#',
 }
 stories.add(
   'Card',

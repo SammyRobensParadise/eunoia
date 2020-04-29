@@ -3,10 +3,8 @@ import {
   Container,
   Card as CardUI,
   CardActionArea,
-  CardActions,
   CardContent,
   CardMedia,
-  Button,
 } from '@material-ui/core'
 import { BrowserRouter as Router, NavLink } from 'react-router-dom'
 //import { UIStyle } from '../constants/constants'
@@ -24,6 +22,7 @@ interface CardProps {
     fontOverride?: string | undefined
     fontColor?: string | undefined
     fontSize?: string | undefined
+    fontSizeTitle?: string | undefined
     height?: string | undefined
     link?: string | undefined | any
   }
@@ -32,6 +31,7 @@ interface CardProps {
 interface CardState {
   shouldRender: boolean | undefined
 }
+
 const CardEl = ({ config }: CardProps) => {
   const { content, title, imageURL, height, imageAltText } = config
   return (
