@@ -32,7 +32,7 @@ export interface MenuProps {
       xl?: boolean
     }
   }
-  options?: Array<{
+  options: Array<{
     title?: string | undefined
     link?: string | undefined | any
     newTab?: boolean
@@ -101,6 +101,33 @@ const MenuLink = styled(NavLink)<MenuItemProps>`
     left: 0;
   }
 `
+const MenuLinkMobile = styled(NavLink)<MenuItemProps>`
+  font-family: ${(p) => (p.font ? p.font : 'Arial')};
+  font-weight: bold;
+  text-decoration: none;
+
+  color: ${(p) => p.fontColor};
+  letter-spacing: 0rem;
+  position: relative;
+
+  &:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: ${(p) => p.fontColor};
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  &:hover:after {
+    width: 100%;
+    left: 0;
+  }
+`
+
 const MenuItem = styled.div<MenuItemProps>`
   font-family: ${(p) => (p.font ? p.font : 'Arial')};
   font-weight: bold;
@@ -149,7 +176,7 @@ const MenuItemMobileOverride = styled(MenuItemMobile)<MenuItemProps>`
  * @returns `Boolean`
  */
 const MenuNode = ({ item }: MenuNodeProps) => {
-  return item.icon ? item.icon : item.title
+  return item.icon ? item.icon: item.title
 }
 
 /**
@@ -204,7 +231,7 @@ const MenuListMobile = ({ options, config }: MenuProps) => {
   }
 
   const mobileMenuToRender = options?.map((item) => (
-    <MenuLink to={item.link} font={config.fontOverride} fontColor={config.fontColor}>
+    <MenuLinkMobile to={item.link} font={config.fontOverride} fontColor={config.fontColor}>
       <MenuItemMobileOverride
         font={config.fontOverride}
         fontColor={config.fontColor}
@@ -213,7 +240,7 @@ const MenuListMobile = ({ options, config }: MenuProps) => {
       >
         <MenuNode item={item} />
       </MenuItemMobileOverride>
-    </MenuLink>
+    </MenuLinkMobile>
   ))
   return (
     <div>

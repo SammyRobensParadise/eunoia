@@ -36,6 +36,7 @@ npm i eunoia
 ## It is recommended that this library be used alongside [styled components](https://styled-components.com/) and [Material UI](https://material-ui.com/)
 
 ## Usage
+
 ```js
 // import
 import { Button } from "eunoia"
@@ -43,11 +44,11 @@ import { Button } from "eunoia"
  * Every component is accessible directly via the
  * universal import "eunoia" designed to be a
  * single dependency import.
- * 
+ *
  * Checkout the storybook
  * https://eunoia.netlify.app/
  * for detailed documentation
- * 
+ *
  **/
 
 // use!
@@ -55,9 +56,13 @@ render(){
   return <Button>Hello from εὔνοιᾰ!</Button>
 }
 ```
+
 #### Source: `Typescript`
+
 #### API: `Javascript/Typescript`
+
 #### Code Style: <i>Prettier</i>
+
 #### Syntax: ES6^
 
 ## What is available
@@ -98,7 +103,6 @@ const Right_Arrow = () => <RightArrow scalingFactor={2} color="#000000" />
 8. Linkedin
 9. Home
 10. Menu
-
 
 ### Icon Props
 
@@ -168,7 +172,9 @@ const React_Icon = () => <ReactIcon scalingFactor={1} color="#000000" />
   offset?: string
   scalingFactor?: number | null
 ```
+
 ### Colors UIStyle:
+
 [Theme Colors](https://eunoia.netlify.com/?path=/story/components--colors)
 
 ```js
@@ -177,7 +183,9 @@ import { UIStyle } from 'eunoia'
 // use as required
 const Gld = UIStyle.UIColors.gold
 ```
+
 ### List of Colors:
+
 ```ts
   UIColors: {
     white: '#FFFFFF',
@@ -187,6 +195,60 @@ const Gld = UIStyle.UIColors.gold
     darkGrey: '#212121',
     mediumGrey: '#5D5D5D',
   }
+```
+
+### Menu Component
+
+[Menu component](https://eunoia.netlify.com/?path=/story/components--menu)
+
+```js
+import { Menu } from '../components/Menu'
+
+// use as required
+render(){
+  return <Menu config={config} options={options} />
+}
+```
+
+#### Details:
+
+The menu component take two args. The first is an object called config that details the style of the menu. The second is an array of objects called options. This array contains a list of items that are rendered to the menu. The menu has both mobile and desktop support and is built over `Material UI`.\
+The Menu uses `react-router` to implement navigation. if you want custom navigation, it can be overridden by passing a `JSX` component as the `icon` param in the array of objects `options` arg.
+
+### Interface:
+See the [Menu Storybook](https://eunoia.netlify.com/?path=/story/components--menu) for an example with source code\
+<br>
+<b>config</b>
+
+```ts
+  config: {
+    fontColor?: string
+    activeSection?: string
+    hideOnMobile?: boolean
+    DisableMobile?: boolean
+    fontOverride?: string
+    boldText?: boolean
+    spacing?: any
+    row?: boolean
+    fontSize?: string
+    breakpoints: {
+      xs?: boolean
+      sm?: boolean
+      xl?: boolean
+    }
+  }
+```
+
+<b>options</b>
+
+```ts
+  options: Array<{
+    title?: string | undefined
+    link?: string | undefined | any
+    newTab?: boolean
+    icon?: any
+    main?: boolean | undefined
+  }>
 ```
 
 ## More components coming soon

@@ -29,7 +29,7 @@ const options = [
     icon: <HomeIcon color={UIStyle.UIColors.black} scalingFactor={1} />,
     main: true,
   },
-  { title: 'About', link: '/#', newTab: false},
+  { title: 'About', link: '/#', newTab: false },
   { title: 'Articles', link: '/#', newTab: false },
   { title: 'Design', link: '/#', newTab: false },
   { title: 'Development', link: '/#', newTab: false },
@@ -40,10 +40,44 @@ stories.add(
   withInfo({
     styles,
     text: `
-    Default Menu
+    #### Default Menu with mobile support that uses react-router-dom for navigation\
+    The menu takes the following config as:
+    ~~~jsx 
+    <Menu config={config} options={options} />
+    ~~~
+    #### config:
+    ~~~ts
+    config: {
+      fontColor?: string
+      activeSection?: string
+      hideOnMobile?: boolean
+      DisableMobile?: boolean
+      fontOverride?: string
+      boldText?: boolean
+      spacing?: any
+      row?: boolean
+      fontSize?: string
+      breakpoints: {
+        xs?: boolean
+        sm?: boolean
+        xl?: boolean
+      }
+    }
+    ~~~
+    #### Options (List Items):
+    ~~~ts
+    options: Array<{
+      title?: string | undefined
+      link?: string | undefined | any
+      newTab?: boolean
+      icon?: JSX | undefined
+      main?: boolean | undefined
+    }>
+    ~~~
+    ##### See the story source for implementation example
     `,
     inline: true,
-    source: false,
+    source: true,
   })(() => (
     <div>
       <Menu config={config} options={options} />
