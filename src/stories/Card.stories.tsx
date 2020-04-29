@@ -12,9 +12,10 @@ const styles = styleConfig.styles
 const config = {
   shouldRender: true,
   content: `sample text`,
-  title: `card title`,
+  title: `Intensif-Eye; Google Vision AI, Design`,
   imageURL: 'https://i.ibb.co/r2NBmKn/intensif-eye-render-shadow-4.png',
   fontOverride: 'Helvetica Neue',
+  fontSize: '30px',
   link: '/#',
 }
 stories.add(

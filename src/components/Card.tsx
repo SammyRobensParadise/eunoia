@@ -7,8 +7,8 @@ import {
   CardMedia,
 } from '@material-ui/core'
 import { BrowserRouter as Router, NavLink } from 'react-router-dom'
-//import { UIStyle } from '../constants/constants'
-//import styled from 'styled-components'
+import { UIStyle } from '../constants/constants'
+import styled from 'styled-components'
 
 interface CardProps {
   config: {
@@ -32,14 +32,59 @@ interface CardState {
   shouldRender: boolean | undefined
 }
 
+interface CardLinkProps {
+  font?: string | undefined
+  fontColor?: string | undefined
+}
+
+interface CardTitleProps {
+  font?: string | undefined
+  fontSize?: string | undefined
+}
+const CardLink = styled(NavLink)<CardLinkProps>`
+  font-family: ${(p) => (p.font ? p.font : 'Arial')};
+  font-weight: bold;
+  text-decoration: none;
+
+  color: ${(p) => p.fontColor};
+  letter-spacing: 0rem;
+  display: inline-block;
+  position: relative;
+
+  &:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: ${(p) => p.fontColor};
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  &:hover:after {
+    width: 100%;
+    left: 0;
+  }
+`
+const CardTitle = styled.h2<CardTitleProps>`
+  font-family: ${(p) => (p.font ? p.font : 'Arial')};
+  font-weight: bold;
+  text-decoration: none;
+  font-size: ${(p) => (p.fontSize ? p.fontSize : '40px')};
+`
+
 const CardEl = ({ config }: CardProps) => {
-  const { content, title, imageURL, height, imageAltText } = config
+  const { content, title, imageURL, height, imageAltText, fontOverride, fontSize } = config
   return (
     <CardUI>
       <CardActionArea>
         <CardContent>
-          <h1>{title}</h1>
-          {content}
+          <CardTitle font={fontOverride} fontSize={fontSize}>
+            {title}
+          </CardTitle>
+          <p>{content}</p>
         </CardContent>
         <CardMedia
           title={title}
@@ -65,15 +110,15 @@ export class Card extends React.PureComponent<CardProps, CardState> {
   }
   render() {
     const { shouldRender } = this.state
-    const { link } = this.props.config
+    const { link, fontOverride, fontColor } = this.props.config
     const { config } = this.props
     if (link) {
       return shouldRender ? (
         <Container>
           <Router>
-            <NavLink to={link}>
+            <CardLink to={link} font={fontOverride} fontColor={fontColor}>
               <CardEl config={config} />
-            </NavLink>
+            </CardLink>
           </Router>
         </Container>
       ) : null
