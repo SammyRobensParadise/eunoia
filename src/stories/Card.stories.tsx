@@ -11,7 +11,7 @@ const stories = storiesOf('Components', module)
 const styles = styleConfig.styles
 const config = {
   shouldRender: true,
-  content: `sample text`,
+  content: `AI for better vision helping people see more every day, improving their lives`,
   title: `Intensif-Eye; Google Vision AI, Design`,
   imageURL: 'https://i.ibb.co/r2NBmKn/intensif-eye-render-shadow-4.png',
   fontOverride: 'Georgia Regular',
@@ -24,10 +24,34 @@ stories.add(
   withInfo({
     styles,
     text: `
-    In Development
+   ### Designed as a flex card for use, built on top of Material UI Card
+   ### Usage:
+    ~~~jsx
+    <Card config={config} />
+    ~~~
+    ### Config:
+    ~~~ts
+    config: {
+      shouldRender: boolean | undefined
+      imageURL?: string | undefined
+      imageAltText?: string | undefined
+      content?: string
+      title: string
+      centerTitle?: boolean | undefined
+      centerContent?: boolean | undefined
+      fontOverride?: string | undefined
+      fontColor?: string | undefined
+      fontSize?: string | undefined
+      fontSizeTitle?: string | undefined
+      height?: string | number | undefined
+      link?: string | undefined | any
+      event?: any | undefined
+      containImage?: boolean | undefined
+    }
+    ~~~
     `,
     inline: true,
-    source: false,
+    source: true,
   })(() => (
     <div>
       <Card config={config} />

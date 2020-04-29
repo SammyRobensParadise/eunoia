@@ -6,6 +6,7 @@ import {
   CardContent,
   CardMedia,
 } from '@material-ui/core'
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 import { BrowserRouter as Router, NavLink } from 'react-router-dom'
 import { UIStyle } from '../constants/constants'
 import styled from 'styled-components'
@@ -23,8 +24,10 @@ interface CardProps {
     fontColor?: string | undefined
     fontSize?: string | undefined
     fontSizeTitle?: string | undefined
-    height?: string | undefined
+    height?: string | number | undefined
     link?: string | undefined | any
+    event?: any | undefined
+    containImage?: boolean | undefined
   }
 }
 
@@ -45,6 +48,12 @@ interface CardTitleProps {
 interface CardContentProps {
   font?: string | undefined
   fontSize?: string | undefined
+}
+interface CardMediaStyleProps {
+  component: string | undefined
+  height?: string | number | undefined
+  alt?: string | undefined
+  title?: string | undefined
 }
 
 // styles
@@ -89,6 +98,14 @@ const CardContentText = styled.p<CardContentProps>`
   font-size: ${(p) => (p.fontSize ? p.fontSize : '18px')};
   color: ${(p) => (p.color ? p.color : UIStyle.UIColors.black)};
 `
+const CardMediaStyle = styled(CardMedia)<CardMediaStyleProps>`
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+`
+
 const CardEl = ({ config }: CardProps) => {
   const {
     content,
@@ -100,7 +117,19 @@ const CardEl = ({ config }: CardProps) => {
     fontSize,
     fontSizeTitle,
     fontColor,
+    containImage,
   } = config
+
+  const wrapTheme = createMuiTheme({
+    overrides: {
+      MuiCardMedia: {
+        root: {
+          objectFit: containImage ? 'contain' : 'cover',
+          userSelect: 'none',
+        },
+      },
+    },
+  })
   return imageURL ? (
     <CardUI>
       <CardActionArea>
@@ -112,13 +141,15 @@ const CardEl = ({ config }: CardProps) => {
             {content}
           </CardContentText>
         </CardContent>
-        <CardMedia
-          title={title}
-          image={imageURL}
-          component="img"
-          alt={imageAltText}
-          height={height}
-        />
+        <ThemeProvider theme={wrapTheme}>
+          <CardMediaStyle
+            title={title}
+            image={imageURL}
+            component="img"
+            alt={imageAltText}
+            height={height}
+          />
+        </ThemeProvider>
       </CardActionArea>
     </CardUI>
   ) : (
@@ -149,13 +180,13 @@ export class Card extends React.PureComponent<CardProps, CardState> {
   }
   render() {
     const { shouldRender } = this.state
-    const { link, fontOverride, fontColor } = this.props.config
+    const { link, fontOverride, fontColor, event } = this.props.config
     const { config } = this.props
     if (link) {
       return shouldRender ? (
         <Container>
           <Router>
-            <CardLink to={link} font={fontOverride} fontColor={fontColor}>
+            <CardLink to={link} font={fontOverride} fontColor={fontColor} onClick={event}>
               <CardEl config={config} />
             </CardLink>
           </Router>
