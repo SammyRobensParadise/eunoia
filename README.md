@@ -88,7 +88,7 @@ const Default = () => <Button onClick={action('clicked')}>Default Button</Button
 [Website Icons](https://eunoia.netlify.com/?path=/story/components--design-icons)
 
 ```tsx
-import  { RightArrow } from 'eunoia'
+import { RightArrow } from 'eunoia'
 
 // use
 const Right_Arrow = () => <RightArrow scalingFactor={2} color="#000000" />
@@ -120,7 +120,7 @@ const Right_Arrow = () => <RightArrow scalingFactor={2} color="#000000" />
 [Design Icons](https://eunoia.netlify.com/?path=/story/components--design-icons)
 
 ```tsx
-import  { PhotoshopIcon } from 'eunoia'
+import { PhotoshopIcon } from 'eunoia'
 
 // use
 const Photoshop_Icon = () => <PhotoshopIcon color="#000000" scalingFactor={1} />
@@ -144,7 +144,7 @@ const Photoshop_Icon = () => <PhotoshopIcon color="#000000" scalingFactor={1} />
 [Development Icons](https://eunoia.netlify.com/?path=/story/components--development-icons)
 
 ```tsx
-import  { ReactIcon } from 'eunoia'
+import { ReactIcon } from 'eunoia'
 
 // use
 const React_Icon = () => <ReactIcon scalingFactor={1} color="#000000" />
@@ -274,7 +274,9 @@ render(){
   return <Card config={config} />
 }
 ```
+
 #### Details
+
 The card component is built on top of the `Material UI` Card component and has similar behavior. It is a flex card with a box shadow that is designed for content sharing. It takes a `config` object that determines the layout of the card and its content.
 
 #### Interface
@@ -300,6 +302,42 @@ See the [Card Storybook](https://eunoia.netlify.com/?path=/story/components--car
     link?: string | undefined | any
     event?: any | undefined
     containImage?: boolean | undefined // not yet implemented
+  }
+```
+
+### Section Header
+
+[SectionHeader component](https://eunoia.netlify.com/?path=/story/components--sectionheader)
+
+```jsx
+import { SectionHeader } from 'eunoia'
+
+// use as required
+render(){
+  return <SectionHeader config={config}>Design! :)</SectionHeader>
+}
+```
+
+#### Details
+
+The section header component is just CSS and takes a `config` object detailed below. Styles can be overridden using `styled(SectionHeader)` from `styled-components`, or can be used as-is.
+
+#### Interface
+
+See the [SectionHeader Storybook](https://eunoia.netlify.com/?path=/story/components--sectionheader) for an example with source code\
+
+<b>config</b>
+
+```ts
+  config: {
+    shouldRender: boolean | undefined
+    text?: string
+    centerText?: boolean | undefined
+    fontOverride?: string | undefined
+    fontColor?: string | undefined
+    fontSize?: number | undefined
+    height?: number | undefined
+    backgroundColor?: string | undefined
   }
 ```
 
