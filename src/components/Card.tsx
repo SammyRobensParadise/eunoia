@@ -41,6 +41,14 @@ interface CardTitleProps {
   font?: string | undefined
   fontSize?: string | undefined
 }
+
+interface CardContentProps {
+  font?: string | undefined
+  fontSize?: string | undefined
+}
+
+// styles
+
 const CardLink = styled(NavLink)<CardLinkProps>`
   font-family: ${(p) => (p.font ? p.font : 'Arial')};
   font-weight: bold;
@@ -73,18 +81,36 @@ const CardTitle = styled.h2<CardTitleProps>`
   font-weight: bold;
   text-decoration: none;
   font-size: ${(p) => (p.fontSize ? p.fontSize : '40px')};
+  color: ${(p) => (p.color ? p.color : UIStyle.UIColors.black)};
 `
-
+const CardContentText = styled.p<CardContentProps>`
+  font-family: ${(p) => (p.font ? p.font : 'Arial')};
+  text-decoration: none;
+  font-size: ${(p) => (p.fontSize ? p.fontSize : '18px')};
+  color: ${(p) => (p.color ? p.color : UIStyle.UIColors.black)};
+`
 const CardEl = ({ config }: CardProps) => {
-  const { content, title, imageURL, height, imageAltText, fontOverride, fontSize } = config
-  return (
+  const {
+    content,
+    title,
+    imageURL,
+    height,
+    imageAltText,
+    fontOverride,
+    fontSize,
+    fontSizeTitle,
+    fontColor,
+  } = config
+  return imageURL ? (
     <CardUI>
       <CardActionArea>
         <CardContent>
-          <CardTitle font={fontOverride} fontSize={fontSize}>
+          <CardTitle font={fontOverride} fontSize={fontSizeTitle} color={fontColor}>
             {title}
           </CardTitle>
-          <p>{content}</p>
+          <CardContentText fontSize={fontSize} font={fontOverride} color={fontColor}>
+            {content}
+          </CardContentText>
         </CardContent>
         <CardMedia
           title={title}
@@ -93,6 +119,19 @@ const CardEl = ({ config }: CardProps) => {
           alt={imageAltText}
           height={height}
         />
+      </CardActionArea>
+    </CardUI>
+  ) : (
+    <CardUI>
+      <CardActionArea>
+        <CardContent>
+          <CardTitle font={fontOverride} fontSize={fontSizeTitle} color={fontColor}>
+            {title}
+          </CardTitle>
+          <CardContentText fontSize={fontSize} font={fontOverride} color={fontColor}>
+            {content}
+          </CardContentText>
+        </CardContent>
       </CardActionArea>
     </CardUI>
   )
