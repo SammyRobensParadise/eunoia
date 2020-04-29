@@ -9,7 +9,12 @@ import '../css/styles/styles.css'
 // constants
 const stories = storiesOf('Components', module)
 const styles = styleConfig.styles
-
+const config = {
+    shouldRender: true,
+    content: `sample text`,
+    title: `card title`,
+    imageURL: 'https://i.ibb.co/chZ8Ww8/envrender.png'
+}
 stories.add(
   'Card',
   withInfo({
@@ -21,7 +26,7 @@ stories.add(
     source: false,
   })(() => (
     <div>
-      <Card shouldRender width={3} />
+      <Card config={config} />
     </div>
   )),
 )

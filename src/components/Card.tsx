@@ -13,13 +13,18 @@ import {
 //import styled from 'styled-components'
 
 interface CardProps {
-  shouldRender: boolean | undefined
-  width: 1 | 2 | 3
+  config: {
+    shouldRender: boolean | undefined
+    imageURL?: string | undefined
+    content?: string
+    title: string
+    centerTitle?: boolean | undefined
+    centerContent?: boolean | undefined
+  }
 }
 
 interface CardState {
   shouldRender: boolean | undefined
-  width: 1 | 2 | 3
 }
 export class Card extends React.PureComponent<CardProps, CardState> {
   static defaultProps = {
@@ -29,20 +34,27 @@ export class Card extends React.PureComponent<CardProps, CardState> {
     super(props)
 
     this.state = {
-      shouldRender: this.props.shouldRender,
-      width: this.props.width,
+      shouldRender: this.props.config.shouldRender,
     }
   }
   render() {
-    return (
+    const { shouldRender } = this.state
+    const { content, title, imageURL } = this.props.config
+    return shouldRender ? (
       <Container>
         <CardUI>
           <CardActionArea>
-            <CardMedia title="Contemplative Reptile" />
             <CardContent>
-              Lizard Lizards are a widespread group of squamate reptiles, with over 6,000 species,
-              ranging across all continents except Antarctica
+              <h1>{title}</h1>
+              {content}
             </CardContent>
+            <CardMedia
+              title="Contemplative Reptile"
+              image={imageURL}
+              component="img"
+              alt="Contemplative Reptile"
+              height="500"
+            />
           </CardActionArea>
           <CardActions>
             <Button size="small" color="primary">
@@ -54,6 +66,6 @@ export class Card extends React.PureComponent<CardProps, CardState> {
           </CardActions>
         </CardUI>
       </Container>
-    )
+    ) : null
   }
 }
