@@ -14,7 +14,7 @@ const config = {
   content: `sample text`,
   title: `Intensif-Eye; Google Vision AI, Design`,
   imageURL: 'https://i.ibb.co/r2NBmKn/intensif-eye-render-shadow-4.png',
-  fontOverride: 'Helvetica Neue',
+  fontOverride: 'Georgia Regular',
   fontSize: '30px',
   link: '/#',
 }
