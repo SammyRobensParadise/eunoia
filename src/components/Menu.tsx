@@ -250,7 +250,7 @@ const MenuListMobile = ({ options, config }: MenuProps) => {
         fontSize={config.fontSize}
         onClick={handleClose}
       >
-        <MenuNode item={item} />
+        <MenuNode fontColor={config.fontColor} item={item} />
       </MenuItemMobileOverride>
     </MenuLinkMobile>
   ))
