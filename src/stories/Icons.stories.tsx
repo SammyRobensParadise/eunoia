@@ -25,7 +25,7 @@ const Wrapper = styled.div`
 `
 
 stories.add(
-  'Design Icons',
+  'Icons',
   withInfo({
     styles,
     text: `
