@@ -11,7 +11,7 @@ import '../css/styles/styles.css'
 const stories = storiesOf('Components', module)
 const styles = styleConfig.styles
 const config = {
-  fontColor: UIStyle.UIColors.black,
+  fontColor: 'red',
   activeSection: 'Home',
   hideOnMobile: true,
   DisableMobile: false,

@@ -66,7 +66,6 @@ interface MenuNodeProps {
 
 interface MenuNodeStyleProps {
   fontColor: string | undefined
-
 }
 
 interface MenuItemWrapperProps {
@@ -141,7 +140,7 @@ const MenuItem = styled.div<MenuItemProps>`
   font-family: ${(p) => (p.font ? p.font : 'Arial')};
   font-weight: bold;
   text-decoration: none !important;
-  color: ${(p) => (p.color ? p.color : UIStyle.UIColors.black)};
+  color: ${(p) => (p.color ? p.color : UIStyle.UIColors.white)};
   font-size: ${(p) => (p.fontSize ? p.fontSize : '26px')};
   padding-left: 20px;
   padding-right: 20px;
@@ -163,7 +162,7 @@ const MenuItemMobileOverride = styled(MenuItemMobile)<MenuItemProps>`
   font-family: ${(p) => (p.font ? p.font : 'Arial')};
   font-weight: bold;
   text-decoration: none !important;
-  color: ${(p) => (p.color ? p.color : UIStyle.UIColors.black)};
+  color: ${(p) => (p.color ? p.color : UIStyle.UIColors.white)};
   font-size: ${(p) => (p.fontSize ? '18px' : '18px')};
   padding-left: 20px;
   padding-right: 20px;
@@ -178,7 +177,7 @@ const MenuItemMobileOverride = styled(MenuItemMobile)<MenuItemProps>`
   }
 `
 const MenuNodeStyle = styled.div<MenuNodeStyleProps>`
-color: ${(p) => p.fontColor};
+  color: ${(p) => (p.fontColor ? p.fontColor : UIStyle.UIColors.white)} !important;
 `
 // Components
 
@@ -188,7 +187,7 @@ color: ${(p) => p.fontColor};
  * @returns `Boolean`
  */
 const MenuNode = ({ item, fontColor }: MenuNodeProps) => {
-  return (<MenuNodeStyle fontColor={fontColor}>{item.icon ? item.icon : item.title}</MenuNodeStyle> )
+  return <MenuNodeStyle fontColor={fontColor}>{item.icon ? item.icon : item.title}</MenuNodeStyle>
 }
 
 /**
@@ -257,7 +256,10 @@ const MenuListMobile = ({ options, config }: MenuProps) => {
   return (
     <div>
       <Button aria-controls="mobile-menu" aria-haspopup="true" onClick={handleClick}>
-        <MenuIcon color={UIStyle.UIColors.black} scalingFactor={1} />
+        <MenuIcon
+          color={config.fontColor ? config.fontColor : UIStyle.UIColors.white}
+          scalingFactor={1}
+        />
       </Button>
       <MenuMobile
         id="mobile-menu"
