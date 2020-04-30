@@ -54,6 +54,7 @@ interface MenuItemProps {
 }
 
 interface MenuNodeProps {
+  fontColor: string | undefined
   item: {
     title?: string | undefined
     link?: string | undefined | any
@@ -61,6 +62,11 @@ interface MenuNodeProps {
     icon?: any
     main?: boolean | undefined
   }
+}
+
+interface MenuNodeStyleProps {
+  fontColor: string | undefined
+
 }
 
 interface MenuItemWrapperProps {
@@ -96,10 +102,12 @@ const MenuLink = styled(NavLink)<MenuItemProps>`
     background: ${(p) => p.fontColor};
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
+    color: ${(p) => p.fontColor};
   }
   &:hover:after {
     width: 100%;
     left: 0;
+    color: ${(p) => p.fontColor};
   }
 `
 const MenuLinkMobile = styled(NavLink)<MenuItemProps>`
@@ -169,6 +177,9 @@ const MenuItemMobileOverride = styled(MenuItemMobile)<MenuItemProps>`
     text-decoration: none !important;
   }
 `
+const MenuNodeStyle = styled.div<MenuNodeStyleProps>`
+color: ${(p) => p.fontColor};
+`
 // Components
 
 /**
@@ -176,8 +187,8 @@ const MenuItemMobileOverride = styled(MenuItemMobile)<MenuItemProps>`
  * @param MenuNodeProps
  * @returns `Boolean`
  */
-const MenuNode = ({ item }: MenuNodeProps) => {
-  return item.icon ? item.icon : item.title
+const MenuNode = ({ item, fontColor }: MenuNodeProps) => {
+  return (<MenuNodeStyle fontColor={fontColor}>{item.icon ? item.icon : item.title}</MenuNodeStyle> )
 }
 
 /**
@@ -199,7 +210,7 @@ const MenuList = ({ options, config }: MenuProps) => {
           fontColor={config.fontColor}
           fontSize={config.fontSize}
         >
-          <MenuNode item={item} />
+          <MenuNode item={item} fontColor={config.fontColor} />
         </MenuItem>
       </MenuLink>
     </MenuItemWrapper>
