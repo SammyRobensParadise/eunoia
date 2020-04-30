@@ -126,13 +126,15 @@ const MenuLinkMobile = styled(NavLink)<MenuItemProps>`
     height: 2px;
     left: 50%;
     position: absolute;
-    background: ${(p) => p.fontColor};
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
+    color: ${(p) => p.fontColor};
+
   }
   &:hover:after {
     width: 100%;
     left: 0;
+    color: ${(p) => p.fontColor};
   }
 `
 
@@ -146,12 +148,15 @@ const MenuItem = styled.div<MenuItemProps>`
   padding-right: 20px;
   &:link {
     text-decoration: none !important;
+    color: ${(p) => (p.color ? p.color : UIStyle.UIColors.white)};
   }
   &:active {
     text-decoration: none !important;
+    color: ${(p) => (p.color ? p.color : UIStyle.UIColors.white)};
   }
   &:visited {
     text-decoration: none !important;
+    color: ${(p) => (p.color ? p.color : UIStyle.UIColors.white)};
   }
 `
 const MenuItemWrapper = styled(Grid)<MenuItemWrapperProps>`
@@ -168,12 +173,15 @@ const MenuItemMobileOverride = styled(MenuItemMobile)<MenuItemProps>`
   padding-right: 20px;
   &:link {
     text-decoration: none !important;
+    color: ${(p) => (p.color ? p.color : UIStyle.UIColors.white)};
   }
   &:active {
     text-decoration: none !important;
+    color: ${(p) => (p.color ? p.color : UIStyle.UIColors.white)};
   }
   &:visited {
     text-decoration: none !important;
+    color: ${(p) => (p.color ? p.color : UIStyle.UIColors.white)};
   }
 `
 const MenuNodeStyle = styled.div<MenuNodeStyleProps>`
