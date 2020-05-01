@@ -25,7 +25,6 @@ export const SectionHeader = styled.div<SectionHeaderProps>`
   font-size: ${(p) => (p.config.fontSize ? `${p.config.fontSize}px` : '50px')};
   & {
     @media screen and (max-width: 800px) {
-      font-size: ${(p) => (p.config.fontSize ? `${p.config.fontSize - 20}px` : '50px')};
       height: ${(p) => (p.config.height ? `${p.config.height - 80}px` : '170px')};
     }
     @media screen and (max-width: 400px) {
