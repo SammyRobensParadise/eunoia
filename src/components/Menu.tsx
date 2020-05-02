@@ -56,6 +56,7 @@ interface MenuItemProps {
 
 interface MenuNodeProps {
   fontColor: string | undefined
+  isMobile: boolean | undefined
   item: {
     title?: string | undefined
     link?: string | undefined | any
@@ -67,6 +68,7 @@ interface MenuNodeProps {
 
 interface MenuNodeStyleProps {
   fontColor: string | undefined
+  isMobile: boolean | undefined
 }
 
 interface MenuItemWrapperProps {
@@ -110,6 +112,36 @@ const MenuLink = styled(NavLink)<MenuItemProps>`
     color: ${(p) => p.fontColor};
   }
 `
+const MenuLinkHref = styled.a<MenuItemProps>`
+  font-family: ${(p) => (p.font ? p.font : 'Arial')};
+  font-weight: bold;
+  text-decoration: none;
+
+  color: ${(p) => p.fontColor};
+  letter-spacing: 0rem;
+  display: inline-block;
+  position: relative;
+
+  &:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: ${(p) => p.fontColor};
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+    color: ${(p) => p.fontColor};
+  }
+  &:hover:after {
+    width: 100%;
+    left: 0;
+    color: ${(p) => p.fontColor};
+  }
+`
+
 const MenuLinkMobile = styled(NavLink)<MenuItemProps>`
   font-family: ${(p) => (p.font ? p.font : 'Arial')};
   font-weight: bold;
@@ -137,7 +169,33 @@ const MenuLinkMobile = styled(NavLink)<MenuItemProps>`
     color: ${(p) => p.fontColor};
   }
 `
+const MenuLinkMobileHref = styled.a<MenuItemProps>`
+  font-family: ${(p) => (p.font ? p.font : 'Arial')};
+  font-weight: bold;
+  text-decoration: none;
 
+  color: ${(p) => p.fontColor};
+  letter-spacing: 0rem;
+  position: relative;
+
+  &:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+    color: ${(p) => p.fontColor};
+  }
+  &:hover:after {
+    width: 100%;
+    left: 0;
+    color: ${(p) => p.fontColor};
+  }
+`
 const MenuItem = styled.div<MenuItemProps>`
   font-family: ${(p) => (p.font ? p.font : 'Arial')};
   font-weight: bold;
@@ -185,7 +243,12 @@ const MenuItemMobileOverride = styled(MenuItemMobile)<MenuItemProps>`
   }
 `
 const MenuNodeStyle = styled.div<MenuNodeStyleProps>`
-  color: ${(p) => (p.fontColor ? p.fontColor : UIStyle.UIColors.white)} !important;
+  color: ${(p) =>
+    p.fontColor && !p.isMobile
+      ? p.fontColor
+      : !p.fontColor && !p.isMobile
+      ? UIStyle.UIColors.white
+      : UIStyle.UIColors.black} !important;
 `
 // Components
 
@@ -194,8 +257,8 @@ const MenuNodeStyle = styled.div<MenuNodeStyleProps>`
  * @param MenuNodeProps
  * @returns `Boolean`
  */
-const MenuNode = ({ item, fontColor }: MenuNodeProps) => {
-  return <MenuNodeStyle fontColor={fontColor}>{item.icon ? item.icon : item.title}</MenuNodeStyle>
+const MenuNode = ({ item, fontColor, isMobile }: MenuNodeProps) => {
+  return <MenuNodeStyle isMobile={isMobile}fontColor={fontColor}>{item.icon ? item.icon : item.title}</MenuNodeStyle>
 }
 
 /**
@@ -211,31 +274,27 @@ const MenuList = ({ options, config }: MenuProps) => {
       sm={config.breakpoints.sm ? 3 : undefined}
       alignItems="center"
     >
-      <MenuLink
-        to={item.link}
-        onClick={() => {
-          if (item.exRef) {
-            window.open(item.exRef, '_self')
-          }
-        }}
-        onKeyPress={(e) => {
-          if (e.key === 'Enter') {
-            if (item.exRef) {
-              window.open(item.exRef, '_self')
-            }
-          }
-        }}
-        font={config.fontOverride}
-        fontColor={config.fontColor}
-      >
-        <MenuItem
-          font={config.fontOverride}
-          fontColor={config.fontColor}
-          fontSize={config.fontSize}
-        >
-          <MenuNode item={item} fontColor={config.fontColor} />
-        </MenuItem>
-      </MenuLink>
+      {item.exRef ? (
+        <MenuLinkHref font={config.fontOverride} fontColor={config.fontColor} href={item.exRef}>
+          <MenuItem
+            font={config.fontOverride}
+            fontColor={config.fontColor}
+            fontSize={config.fontSize}
+          >
+            <MenuNode  isMobile={false} item={item} fontColor={config.fontColor} />
+          </MenuItem>
+        </MenuLinkHref>
+      ) : (
+        <MenuLink to={item.link} font={config.fontOverride} fontColor={config.fontColor}>
+          <MenuItem
+            font={config.fontOverride}
+            fontColor={config.fontColor}
+            fontSize={config.fontSize}
+          >
+            <MenuNode isMobile={false}  item={item} fontColor={config.fontColor} />
+          </MenuItem>
+        </MenuLink>
+      )}
     </MenuItemWrapper>
   ))
   return (
@@ -266,32 +325,35 @@ const MenuListMobile = ({ options, config }: MenuProps) => {
   }
 
   const mobileMenuToRender = options?.map((item) => (
-    <MenuLinkMobile
-      to={item.link}
-      onClick={() => {
-        if (item.exRef) {
-          window.open(item.exRef, '_self')
-        }
-      }}
-      onKeyPress={(e) => {
-        if (e.key === 'Enter') {
-          if (item.exRef) {
-            window.open(item.exRef, '_self')
-          }
-        }
-      }}
-      font={config.fontOverride}
-      fontColor={config.fontColor}
-    >
-      <MenuItemMobileOverride
-        font={config.fontOverride}
-        fontColor={config.fontColor}
-        fontSize={config.fontSize}
-        onClick={handleClose}
-      >
-        <MenuNode fontColor={config.fontColor} item={item} />
-      </MenuItemMobileOverride>
-    </MenuLinkMobile>
+    <div>
+      {item.exRef ? (
+        <MenuLinkMobileHref
+          font={config.fontOverride}
+          fontColor={config.fontColor}
+          href={item.exRef}
+        >
+          <MenuItemMobileOverride
+            font={config.fontOverride}
+            fontColor={config.fontColor}
+            fontSize={config.fontSize}
+            onClick={handleClose}
+          >
+            <MenuNode isMobile fontColor={config.fontColor} item={item} />
+          </MenuItemMobileOverride>
+        </MenuLinkMobileHref>
+      ) : (
+        <MenuLinkMobile to={item.link} font={config.fontOverride} fontColor={config.fontColor}>
+          <MenuItemMobileOverride
+            font={config.fontOverride}
+            fontColor={config.fontColor}
+            fontSize={config.fontSize}
+            onClick={handleClose}
+          >
+            <MenuNode isMobile fontColor={config.fontColor} item={item} />
+          </MenuItemMobileOverride>
+        </MenuLinkMobile>
+      )}
+    </div>
   ))
   return (
     <div>
