@@ -36,6 +36,7 @@ export interface MenuProps {
   options: Array<{
     title?: string | undefined
     link?: string | undefined | any
+    exRef?: string | undefined
     newTab?: boolean
     icon?: any
     main?: boolean | undefined
@@ -129,7 +130,6 @@ const MenuLinkMobile = styled(NavLink)<MenuItemProps>`
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
     color: ${(p) => p.fontColor};
-
   }
   &:hover:after {
     width: 100%;
@@ -211,7 +211,23 @@ const MenuList = ({ options, config }: MenuProps) => {
       sm={config.breakpoints.sm ? 3 : undefined}
       alignItems="center"
     >
-      <MenuLink to={item.link} font={config.fontOverride} fontColor={config.fontColor}>
+      <MenuLink
+        to={item.link}
+        onClick={() => {
+          if (item.exRef) {
+            window.open(item.exRef, '_self')
+          }
+        }}
+        onKeyPress={(e) => {
+          if (e.key === 'Enter') {
+            if (item.exRef) {
+              window.open(item.exRef, '_self')
+            }
+          }
+        }}
+        font={config.fontOverride}
+        fontColor={config.fontColor}
+      >
         <MenuItem
           font={config.fontOverride}
           fontColor={config.fontColor}
@@ -250,7 +266,23 @@ const MenuListMobile = ({ options, config }: MenuProps) => {
   }
 
   const mobileMenuToRender = options?.map((item) => (
-    <MenuLinkMobile to={item.link} font={config.fontOverride} fontColor={config.fontColor}>
+    <MenuLinkMobile
+      to={item.link}
+      onClick={() => {
+        if (item.exRef) {
+          window.open(item.exRef, '_self')
+        }
+      }}
+      onKeyPress={(e) => {
+        if (e.key === 'Enter') {
+          if (item.exRef) {
+            window.open(item.exRef, '_self')
+          }
+        }
+      }}
+      font={config.fontOverride}
+      fontColor={config.fontColor}
+    >
       <MenuItemMobileOverride
         font={config.fontOverride}
         fontColor={config.fontColor}
@@ -265,7 +297,7 @@ const MenuListMobile = ({ options, config }: MenuProps) => {
     <div>
       <Button aria-controls="mobile-menu" aria-haspopup="true" onClick={handleClick}>
         <MenuIcon
-          color={config.fontColor ? config.fontColor : UIStyle.UIColors.white}
+          color={config.fontColor ? config.fontColor : UIStyle.UIColors.black}
           scalingFactor={1}
         />
       </Button>

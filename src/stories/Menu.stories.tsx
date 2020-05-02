@@ -31,7 +31,7 @@ const options = [
     main: true,
   },
   { title: 'About', link: '/#', newTab: false },
-  { title: 'Articles', link: '/#', newTab: false },
+  { title: 'Articles', link: '/#', newTab: false, exRef: 'https://medium.com/@srobensparadise' },
   { title: 'Design', link: '/#', newTab: false },
   { title: 'Development', link: '/#', newTab: false },
   { title: 'Experience', link: '/#', newTab: false },
@@ -71,6 +71,7 @@ stories.add(
     options: Array<{
       title?: string | undefined
       link?: string | undefined | any
+      exRef: string | undefined // this is an external link
       newTab?: boolean
       icon?: JSX | undefined
       main?: boolean | undefined

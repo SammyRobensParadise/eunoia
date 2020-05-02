@@ -255,7 +255,8 @@ See the [Menu Storybook](https://eunoia.netlify.com/?path=/story/components--men
 ```ts
   options: Array<{
     title?: string | undefined
-    link?: string | undefined | any
+    link?: string | undefined | any // this is a local nav link with react-router-dom
+    exRef: string | undefined // this is an external link
     newTab?: boolean
     icon?: any
     main?: boolean | undefined
