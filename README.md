@@ -174,6 +174,30 @@ const React_Icon = () => <ReactIcon scalingFactor={1} color="#000000" />
 20. C++ (ISO)
 21. Typescript
 
+### Industry Icons
+
+[Industry Icons](https://eunoia.netlify.com/?path=/story/components--industry-icons)
+
+```tsx
+import { JiraIcon } from 'eunoia'
+
+// use
+const Jira_Icon = () => <JiraIcon scalingFactor={1} color="#000000" />
+```
+
+#### List of Industry Icons
+
+1. JiraIcon
+2. GithubIndustryIcon
+3. BitbucketIcon
+4. ConfluenceIcon
+5. GoogleAnalyticsIcon
+6. GoogleCloudIcon
+7. AWSIcon
+8. InvisionIndustryIcon
+9. SlackIcon
+10. MicrosoftIcon
+
 ### Icon Props
 
 ```ts
