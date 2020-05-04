@@ -1,6 +1,15 @@
 import React from 'react'
 import {
-Icon,
+  JiraIcon,
+  GithubIndustryIcon,
+  BitbucketIcon,
+  ConfluenceIcon,
+  GoogleAnalyticsIcon,
+  GoogleCloudIcon,
+  AWSIcon,
+  InvisionIndustryIcon,
+  SlackIcon,
+  MicrosoftIcon,
 } from '../components/IndustryTools'
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
@@ -21,7 +30,7 @@ stories.add(
     text: `
     Default Icon Usage:
     ~~~jsx
-    <ReactIcon color="red" scalingFactor={1} />
+    <JiraIcon color="red" scalingFactor={1} />
     ~~~
       | Props          | Description             | Type    |
       |----------------|-------------------------|---------|
@@ -33,7 +42,34 @@ stories.add(
   })(() => (
     <div>
       <Wrapper>
-        <Icon scalingFactor={1} color="#000000" />
+        <JiraIcon scalingFactor={1} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <GithubIndustryIcon scalingFactor={1} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <BitbucketIcon scalingFactor={1} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <ConfluenceIcon scalingFactor={1} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <GoogleAnalyticsIcon scalingFactor={1} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <GoogleCloudIcon scalingFactor={1} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <AWSIcon scalingFactor={1} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <InvisionIndustryIcon scalingFactor={1} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <SlackIcon scalingFactor={1} color="#000000" />
+      </Wrapper>
+      <Wrapper>
+        <MicrosoftIcon scalingFactor={1} color="#000000" />
       </Wrapper>
     </div>
   )),
