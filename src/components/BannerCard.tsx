@@ -10,6 +10,7 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 import { BrowserRouter as Router, NavLink } from 'react-router-dom'
 import { UIStyle } from '../constants/constants'
 import styled from 'styled-components'
+import { makeStyles, useTheme } from '@material-ui/core/styles'
 
 interface CardProps {
   config: {
@@ -126,14 +127,34 @@ const CardEl = ({ config }: CardProps) => {
         root: {
           objectFit: containImage ? 'contain' : 'cover',
           userSelect: 'none',
+          display: 'flex',
         },
       },
     },
   })
+
+  const useStyles = makeStyles((theme) => ({
+    root: {
+      display: 'flex',
+      height: 'auto',
+    },
+    details: {
+      display: 'flex',
+      flexDirection: 'column',
+    },
+    content: {
+      flex: '1 0 auto',
+    },
+    cover: {
+      width: 400,
+    },
+  }))
+
+  const classes = useStyles()
   return imageURL ? (
-    <CardUI>
-      <CardActionArea>
-        <CardContent>
+    <CardUI className={classes.root}>
+      <div className={classes.details}>
+        <CardContent className={classes.content}>
           <CardTitle font={fontOverride} fontSize={fontSizeTitle} color={fontColor}>
             {title}
           </CardTitle>
@@ -141,16 +162,8 @@ const CardEl = ({ config }: CardProps) => {
             {content}
           </CardContentText>
         </CardContent>
-        <ThemeProvider theme={wrapTheme}>
-          <CardMediaStyle
-            title={title}
-            image={imageURL}
-            component="img"
-            alt={imageAltText}
-            height={height}
-          />
-        </ThemeProvider>
-      </CardActionArea>
+      </div>
+      <CardMedia className={classes.cover} image={imageURL} title={imageAltText} />
     </CardUI>
   ) : (
     <CardUI>
