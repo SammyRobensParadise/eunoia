@@ -6,11 +6,10 @@ import {
   CardContent,
   CardMedia,
 } from '@material-ui/core'
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles'
 import { BrowserRouter as Router, NavLink } from 'react-router-dom'
 import { UIStyle } from '../constants/constants'
 import styled from 'styled-components'
-import { makeStyles, useTheme } from '@material-ui/core/styles'
 
 interface CardProps {
   config: {
@@ -29,6 +28,7 @@ interface CardProps {
     link?: string | undefined | any
     event?: any | undefined
     containImage?: boolean | undefined
+    imageWidth?: number | undefined
   }
 }
 
@@ -105,6 +105,7 @@ const CardMediaStyle = styled(CardMedia)<CardMediaStyleProps>`
   -webkit-user-drag: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+  object-fit: contain;
 `
 
 const CardEl = ({ config }: CardProps) => {
@@ -118,25 +119,14 @@ const CardEl = ({ config }: CardProps) => {
     fontSize,
     fontSizeTitle,
     fontColor,
-    containImage,
+    imageWidth,
   } = config
-
-  const wrapTheme = createMuiTheme({
-    overrides: {
-      MuiCardMedia: {
-        root: {
-          objectFit: containImage ? 'contain' : 'cover',
-          userSelect: 'none',
-          display: 'flex',
-        },
-      },
-    },
-  })
 
   const useStyles = makeStyles((theme) => ({
     root: {
       display: 'flex',
       height: 'auto',
+      width: 'auto',
     },
     details: {
       display: 'flex',
@@ -146,36 +136,48 @@ const CardEl = ({ config }: CardProps) => {
       flex: '1 0 auto',
     },
     cover: {
-      width: 400,
+      width: imageWidth ? imageWidth : 200,
+      userSelect: 'none',
     },
   }))
 
   const classes = useStyles()
   return imageURL ? (
     <CardUI className={classes.root}>
-      <div className={classes.details}>
-        <CardContent className={classes.content}>
-          <CardTitle font={fontOverride} fontSize={fontSizeTitle} color={fontColor}>
-            {title}
-          </CardTitle>
-          <CardContentText fontSize={fontSize} font={fontOverride} color={fontColor}>
-            {content}
-          </CardContentText>
-        </CardContent>
-      </div>
-      <CardMedia className={classes.cover} image={imageURL} title={imageAltText} />
+      <CardActionArea className={classes.root}>
+        <div className={classes.details}>
+          <CardContent className={classes.content}>
+            <CardTitle font={fontOverride} fontSize={fontSizeTitle} color={fontColor}>
+              {title}
+            </CardTitle>
+            <CardContentText fontSize={fontSize} font={fontOverride} color={fontColor}>
+              {content}
+            </CardContentText>
+          </CardContent>
+        </div>
+        <CardMediaStyle
+          className={classes.cover}
+          title={title}
+          image={imageURL}
+          component="img"
+          alt={imageAltText}
+          height={height}
+        />
+      </CardActionArea>
     </CardUI>
   ) : (
-    <CardUI>
-      <CardActionArea>
-        <CardContent>
-          <CardTitle font={fontOverride} fontSize={fontSizeTitle} color={fontColor}>
-            {title}
-          </CardTitle>
-          <CardContentText fontSize={fontSize} font={fontOverride} color={fontColor}>
-            {content}
-          </CardContentText>
-        </CardContent>
+    <CardUI className={classes.root}>
+      <CardActionArea className={classes.root}>
+        <div className={classes.details}>
+          <CardContent className={classes.content}>
+            <CardTitle font={fontOverride} fontSize={fontSizeTitle} color={fontColor}>
+              {title}
+            </CardTitle>
+            <CardContentText fontSize={fontSize} font={fontOverride} color={fontColor}>
+              {content}
+            </CardContentText>
+          </CardContent>
+        </div>
       </CardActionArea>
     </CardUI>
   )

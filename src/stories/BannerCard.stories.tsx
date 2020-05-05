@@ -18,6 +18,7 @@ const config = {
   fontSize: '18px',
   fontSizeTitle: '30px',
   link: '/#',
+  imageWidth: 200
 }
 stories.add(
   'Banner Card',
@@ -27,7 +28,7 @@ stories.add(
    ### Designed as a flex card for use, built on top of Material UI Card
    ### Usage:
     ~~~jsx
-    <Card config={config} />
+    <BannerCard config={config} />
     ~~~
     ### Config:
     ~~~ts
@@ -46,7 +47,7 @@ stories.add(
       height?: string | number | undefined
       link?: string | undefined | any
       event?: any | undefined
-      containImage?: boolean | undefined
+      imageWidth?: number | undefined
     }
     ~~~
     `,
