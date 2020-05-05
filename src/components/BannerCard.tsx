@@ -11,7 +11,7 @@ import { BrowserRouter as Router, NavLink } from 'react-router-dom'
 import { UIStyle } from '../constants/constants'
 import styled from 'styled-components'
 
-interface CardProps {
+interface CardPropsBanner {
   config: {
     shouldRender: boolean | undefined
     imageURL?: string | undefined
@@ -108,7 +108,7 @@ const CardMediaStyle = styled(CardMedia)<CardMediaStyleProps>`
   object-fit: contain;
 `
 
-const CardEl = ({ config }: CardProps) => {
+const CardEl = ({ config }: CardPropsBanner) => {
   const {
     content,
     title,
@@ -182,11 +182,11 @@ const CardEl = ({ config }: CardProps) => {
     </CardUI>
   )
 }
-export class BannerCard extends React.PureComponent<CardProps, CardState> {
+export class BannerCard extends React.PureComponent<CardPropsBanner, CardState> {
   static defaultProps = {
     activeSection: null,
   }
-  constructor(props: CardProps) {
+  constructor(props: CardPropsBanner) {
     super(props)
 
     this.state = {
