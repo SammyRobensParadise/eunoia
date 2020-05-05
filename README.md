@@ -330,6 +330,51 @@ See the [Card Storybook](https://eunoia.netlify.com/?path=/story/components--car
   }
 ```
 
+### BannerCard
+
+[BannerCard component](https://eunoia.netlify.com/?path=/story/components--banner-card)
+
+```jsx
+import { BannerCard } from 'eunoia'
+
+// use as required
+render(){
+  return <BannerCard config={config} />
+}
+```
+
+#### Details
+
+The card component is built on top of the `Material UI` Card component and has similar behavior. It is a flex card with a box shadow that is designed for content sharing . It takes a `config` object that determines the layout of the card and its content. It differs from the regular `card` component because the image is rendered to the right side, and is a little more particular, especially for mobile
+
+#### Interface
+
+See the [Card Storybook](https://eunoia.netlify.com/?path=/story/components--card) for an example with source code\
+
+<b>config</b>
+
+```ts
+  config: {
+    shouldRender: boolean | undefined
+    imageURL?: string | undefined
+    imageAltText?: string | undefined
+    content?: string
+    title: string
+    centerTitle?: boolean | undefined
+    centerContent?: boolean | undefined
+    fontOverride?: string | undefined
+    fontColor?: string | undefined
+    fontSize?: string | undefined
+    fontSizeTitle?: string | undefined
+    height?: string | number | undefined
+    link?: string | undefined | any
+    event?: any | undefined
+    containImage?: boolean | undefined
+    imageWidth?: number | undefined
+  }
+
+```
+
 ### Section Header
 
 [SectionHeader component](https://eunoia.netlify.com/?path=/story/components--sectionheader)
