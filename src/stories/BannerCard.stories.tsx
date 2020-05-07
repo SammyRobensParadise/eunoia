@@ -3,6 +3,7 @@ import { BannerCard } from '../components/BannerCard'
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 import { styleConfig } from '../utils/config'
+import { BrowserRouter as Router } from 'react-router-dom'
 // import { UIStyle } from '../constants/constants'
 import '../css/styles/styles.css'
 
@@ -18,7 +19,7 @@ const config = {
   fontSize: '18px',
   fontSizeTitle: '30px',
   link: '/#',
-  imageWidth: 200
+  imageWidth: 200,
 }
 stories.add(
   'Banner Card',
@@ -55,7 +56,9 @@ stories.add(
     source: true,
   })(() => (
     <div>
-      <BannerCard config={config} />
+      <Router>
+        <BannerCard config={config} />
+      </Router>
     </div>
   )),
 )

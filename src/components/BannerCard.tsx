@@ -7,7 +7,7 @@ import {
   CardMedia,
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
-import { BrowserRouter as Router, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { UIStyle } from '../constants/constants'
 import styled from 'styled-components'
 
@@ -59,7 +59,7 @@ interface CardMediaStyleProps {
 
 // styles
 
-const CardLink = styled(NavLink)<CardLinkProps>`
+const CardLink = styled(Link)<CardLinkProps>`
   font-family: ${(p) => (p.font ? p.font : 'Arial')};
   font-weight: bold;
   text-decoration: none;
@@ -200,11 +200,9 @@ export class BannerCard extends React.PureComponent<CardPropsBanner, CardState> 
     if (link) {
       return shouldRender ? (
         <Container>
-          <Router>
-            <CardLink to={link} font={fontOverride} fontColor={fontColor} onClick={event}>
-              <CardEl config={config} />
-            </CardLink>
-          </Router>
+          <CardLink to={link} font={fontOverride} fontColor={fontColor} onClick={event}>
+            <CardEl config={config} />
+          </CardLink>
         </Container>
       ) : null
     } else {

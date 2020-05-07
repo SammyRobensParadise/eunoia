@@ -5,6 +5,7 @@ import { withInfo } from '@storybook/addon-info'
 import { styleConfig } from '../utils/config'
 // import { UIStyle } from '../constants/constants'
 import '../css/styles/styles.css'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 // constants
 const stories = storiesOf('Components', module)
@@ -54,7 +55,9 @@ stories.add(
     source: true,
   })(() => (
     <div>
+      <Router>
       <Card config={config} />
+      </Router>
     </div>
   )),
 )
