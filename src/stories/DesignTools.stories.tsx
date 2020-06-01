@@ -36,7 +36,7 @@ stories.add(
     source: true,
   })(() => (
     <div>
-      <PhotoshopIcon scalingFactor={1} color="#000000" />
+      <PhotoshopIcon scalingFactor={1} name="Photoshop" font="Helvetica Neue" color="#000000" />
       <IllustratorIcon scalingFactor={1} color="#000000" />
       <ExperienceDesignerIcon scalingFactor={1} color="#000000" />
       <FigmaIcon scalingFactor={1} color="#000000" />

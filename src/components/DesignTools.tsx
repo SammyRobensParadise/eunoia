@@ -1,8 +1,12 @@
 import React from 'react'
+import styled from 'styled-components'
+import { UIStyle } from '../constants'
 
 type PhotoshopIconProps = {
   color: string
   scalingFactor: number
+  name?: string
+  font?: string
 }
 
 type IllustratorIconProps = {
@@ -49,9 +53,51 @@ type CreativecloudIconProps = {
   color: string
   scalingFactor: number
 }
+type HoverNameProps = {
+  initialWidth: number
+  initialHeight: number
+  color: string
+  textColor: string
+  scalingFactor: number
+  font?: string
+}
 
-export const PhotoshopIcon = ({ color, scalingFactor }: PhotoshopIconProps) => (
+const HoverName = styled.div<HoverNameProps>`
+  opacity: 0;
+  width: ${(p) =>
+    p.scalingFactor && p.initialWidth ? `${p.scalingFactor * p.initialWidth}px` : `150px`};
+  height: ${(p) =>
+    p.scalingFactor && p.initialHeight ? `${p.scalingFactor * p.initialHeight}px` : `150px`};
+  color: ${(p) => (p.textColor ? p.textColor : UIStyle.UIColors.white)};
+  background-color: ${(p) => (p.color ? p.color : UIStyle.UIColors.black)};
+  position: absolute;
+  font-size: 18px;
+  line-height: ${(p) => `${p.initialHeight * p.scalingFactor - 10}px`};
+  font-family: ${(p) => (p.font ? p.font : 'Arial')};
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  &:hover,
+  :focus {
+    opacity: 1;
+  }
+`
+
+export const PhotoshopIcon = ({ color, scalingFactor, name, font }: PhotoshopIconProps) => (
   <div>
+    {name ? (
+      <HoverName
+        initialWidth={153.846}
+        initialHeight={150}
+        scalingFactor={scalingFactor}
+        color={color}
+        textColor={UIStyle.UIColors.white}
+        font={font}
+      >
+        {name}
+      </HoverName>
+    ) : null}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={`${scalingFactor ? 153.846 * scalingFactor : 153.846}`}
