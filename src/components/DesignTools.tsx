@@ -71,6 +71,7 @@ type CreativecloudIconProps = {
   name?: string
   font?: string
 }
+
 type HoverNameProps = {
   initialWidth: number
   initialHeight: number

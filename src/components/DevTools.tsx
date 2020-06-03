@@ -1,12 +1,59 @@
 import React from 'react'
+import styled from 'styled-components'
+import { UIStyle } from '../constants'
 
 type IconProps = {
   color: string
   scalingFactor: number
+  name?: string
+  font?: string
 }
 
-export const ReactIcon = ({ color, scalingFactor }: IconProps) => (
+type HoverNameProps = {
+  initialWidth: number
+  initialHeight: number
+  color?: string
+  textColor?: string
+  scalingFactor: number
+  font?: string
+}
+
+const HoverName = styled.div<HoverNameProps>`
+  opacity: 0;
+  width: ${(p) =>
+    p.scalingFactor && p.initialWidth ? `${p.scalingFactor * p.initialWidth}px` : `150px`};
+  height: ${(p) =>
+    p.scalingFactor && p.initialHeight ? `${p.scalingFactor * p.initialHeight}px` : `150px`};
+  color: ${(p) => (p.textColor ? p.textColor : UIStyle.UIColors.white)};
+  background-color: ${(p) => (p.color ? p.color : UIStyle.UIColors.black)};
+  position: absolute;
+  font-size: 18px;
+  line-height: ${(p) => `${p.initialHeight * p.scalingFactor - 10}px`};
+  font-family: ${(p) => (p.font ? p.font : 'Arial')};
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  &:hover,
+  :focus {
+    opacity: 1;
+  }
+`
+
+export const ReactIcon = ({ color, scalingFactor, name, font }: IconProps) => (
   <div>
+    {name ? (
+      <HoverName
+        initialWidth={168.59}
+        initialHeight={150}
+        scalingFactor={scalingFactor}
+        color={color}
+        textColor={UIStyle.UIColors.white}
+        font={font}
+      >
+        {name}
+      </HoverName>
+    ) : null}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={`${scalingFactor ? 168.59 * scalingFactor : 168.59}`}
@@ -24,8 +71,20 @@ export const ReactIcon = ({ color, scalingFactor }: IconProps) => (
   </div>
 )
 
-export const PythonIcon = ({ color, scalingFactor }: IconProps) => (
+export const PythonIcon = ({ color, scalingFactor, name, font }: IconProps) => (
   <div>
+    {name ? (
+      <HoverName
+        initialWidth={150.75}
+        initialHeight={150}
+        scalingFactor={scalingFactor}
+        color={color}
+        textColor={UIStyle.UIColors.white}
+        font={font}
+      >
+        {name}
+      </HoverName>
+    ) : null}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={`${scalingFactor ? 150.75 * scalingFactor : 150.75}`}
@@ -42,8 +101,20 @@ export const PythonIcon = ({ color, scalingFactor }: IconProps) => (
   </div>
 )
 
-export const WebpackIcon = ({ color, scalingFactor }: IconProps) => (
+export const WebpackIcon = ({ color, scalingFactor, name, font }: IconProps) => (
   <div>
+    {name ? (
+      <HoverName
+        initialWidth={135.835}
+        initialHeight={150}
+        scalingFactor={scalingFactor}
+        color={color}
+        textColor={UIStyle.UIColors.white}
+        font={font}
+      >
+        {name}
+      </HoverName>
+    ) : null}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={`${scalingFactor ? 135.835 * scalingFactor : 135.835}`}
@@ -61,8 +132,20 @@ export const WebpackIcon = ({ color, scalingFactor }: IconProps) => (
   </div>
 )
 
-export const NodeIcon = ({ color, scalingFactor }: IconProps) => (
+export const NodeIcon = ({ color, scalingFactor, name, font }: IconProps) => (
   <div>
+    {name ? (
+      <HoverName
+        initialWidth={132.989}
+        initialHeight={150}
+        scalingFactor={scalingFactor}
+        color={color}
+        textColor={UIStyle.UIColors.white}
+        font={font}
+      >
+        {name}
+      </HoverName>
+    ) : null}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={`${scalingFactor ? 132.989 * scalingFactor : 132.989}`}
@@ -80,8 +163,20 @@ export const NodeIcon = ({ color, scalingFactor }: IconProps) => (
   </div>
 )
 
-export const JSIcon = ({ color, scalingFactor }: IconProps) => (
+export const JSIcon = ({ color, scalingFactor, name, font }: IconProps) => (
   <div>
+    {name ? (
+      <HoverName
+        initialWidth={150}
+        initialHeight={150}
+        scalingFactor={scalingFactor}
+        color={color}
+        textColor={UIStyle.UIColors.white}
+        font={font}
+      >
+        {name}
+      </HoverName>
+    ) : null}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={`${scalingFactor ? 150 * scalingFactor : 150}`}
@@ -98,8 +193,20 @@ export const JSIcon = ({ color, scalingFactor }: IconProps) => (
   </div>
 )
 
-export const PHPIcon = ({ color, scalingFactor }: IconProps) => (
+export const PHPIcon = ({ color, scalingFactor, name, font }: IconProps) => (
   <div>
+    {name ? (
+      <HoverName
+        initialWidth={285.149}
+        initialHeight={150}
+        scalingFactor={scalingFactor}
+        color={color}
+        textColor={UIStyle.UIColors.white}
+        font={font}
+      >
+        {name}
+      </HoverName>
+    ) : null}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={`${scalingFactor ? 285.149 * scalingFactor : 285.149}`}
@@ -117,8 +224,20 @@ export const PHPIcon = ({ color, scalingFactor }: IconProps) => (
   </div>
 )
 
-export const GitLargeIcon = ({ color, scalingFactor }: IconProps) => (
+export const GitLargeIcon = ({ color, scalingFactor, name, font }: IconProps) => (
   <div>
+    {name ? (
+      <HoverName
+        initialWidth={150.003}
+        initialHeight={150}
+        scalingFactor={scalingFactor}
+        color={color}
+        textColor={UIStyle.UIColors.white}
+        font={font}
+      >
+        {name}
+      </HoverName>
+    ) : null}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={`${scalingFactor ? 150.003 * scalingFactor : 150.003}`}
@@ -136,8 +255,20 @@ export const GitLargeIcon = ({ color, scalingFactor }: IconProps) => (
   </div>
 )
 
-export const JenkinsIcon = ({ color, scalingFactor }: IconProps) => (
+export const JenkinsIcon = ({ color, scalingFactor, name, font }: IconProps) => (
   <div>
+    {name ? (
+      <HoverName
+        initialWidth={136.004}
+        initialHeight={150}
+        scalingFactor={scalingFactor}
+        color={color}
+        textColor={UIStyle.UIColors.white}
+        font={font}
+      >
+        {name}
+      </HoverName>
+    ) : null}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={`${scalingFactor ? 136.004 * scalingFactor : 136.004}`}
@@ -155,8 +286,20 @@ export const JenkinsIcon = ({ color, scalingFactor }: IconProps) => (
   </div>
 )
 
-export const K8sIcon = ({ color, scalingFactor }: IconProps) => (
+export const K8sIcon = ({ color, scalingFactor, name, font }: IconProps) => (
   <div>
+    {name ? (
+      <HoverName
+        initialWidth={154.584}
+        initialHeight={150}
+        scalingFactor={scalingFactor}
+        color={color}
+        textColor={UIStyle.UIColors.white}
+        font={font}
+      >
+        {name}
+      </HoverName>
+    ) : null}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={`${scalingFactor ? 154.584 * scalingFactor : 154.584}`}
@@ -174,8 +317,20 @@ export const K8sIcon = ({ color, scalingFactor }: IconProps) => (
   </div>
 )
 
-export const DockerIcon = ({ color, scalingFactor }: IconProps) => (
+export const DockerIcon = ({ color, scalingFactor, name, font }: IconProps) => (
   <div>
+    {name ? (
+      <HoverName
+        initialWidth={208.547}
+        initialHeight={150}
+        scalingFactor={scalingFactor}
+        color={color}
+        textColor={UIStyle.UIColors.white}
+        font={font}
+      >
+        {name}
+      </HoverName>
+    ) : null}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={`${scalingFactor ? 208.547 * scalingFactor : 208.547}`}
@@ -193,8 +348,20 @@ export const DockerIcon = ({ color, scalingFactor }: IconProps) => (
   </div>
 )
 
-export const SassIcon = ({ color, scalingFactor }: IconProps) => (
+export const SassIcon = ({ color, scalingFactor, name, font }: IconProps) => (
   <div>
+    {name ? (
+      <HoverName
+        initialWidth={150}
+        initialHeight={150}
+        scalingFactor={scalingFactor}
+        color={color}
+        textColor={UIStyle.UIColors.white}
+        font={font}
+      >
+        {name}
+      </HoverName>
+    ) : null}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={`${scalingFactor ? 150 * scalingFactor : 150}`}
@@ -211,8 +378,20 @@ export const SassIcon = ({ color, scalingFactor }: IconProps) => (
   </div>
 )
 
-export const CssIcon = ({ color, scalingFactor }: IconProps) => (
+export const CssIcon = ({ color, scalingFactor, name, font }: IconProps) => (
   <div>
+    {name ? (
+      <HoverName
+        initialWidth={131.25}
+        initialHeight={150}
+        scalingFactor={scalingFactor}
+        color={color}
+        textColor={UIStyle.UIColors.white}
+        font={font}
+      >
+        {name}
+      </HoverName>
+    ) : null}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={`${scalingFactor ? 131.25 * scalingFactor : 131.25}`}
@@ -230,8 +409,20 @@ export const CssIcon = ({ color, scalingFactor }: IconProps) => (
   </div>
 )
 
-export const HtmlIcon = ({ color, scalingFactor }: IconProps) => (
+export const HtmlIcon = ({ color, scalingFactor, name, font }: IconProps) => (
   <div>
+    {name ? (
+      <HoverName
+        initialWidth={131.25}
+        initialHeight={150}
+        scalingFactor={scalingFactor}
+        color={color}
+        textColor={UIStyle.UIColors.white}
+        font={font}
+      >
+        {name}
+      </HoverName>
+    ) : null}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={`${scalingFactor ? 131.25 * scalingFactor : 131.25}`}
@@ -249,8 +440,20 @@ export const HtmlIcon = ({ color, scalingFactor }: IconProps) => (
   </div>
 )
 
-export const YarnIcon = ({ color, scalingFactor }: IconProps) => (
+export const YarnIcon = ({ color, scalingFactor, name, font }: IconProps) => (
   <div>
+    {name ? (
+      <HoverName
+        initialWidth={150}
+        initialHeight={150}
+        scalingFactor={scalingFactor}
+        color={color}
+        textColor={UIStyle.UIColors.white}
+        font={font}
+      >
+        {name}
+      </HoverName>
+    ) : null}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={`${scalingFactor ? 150 * scalingFactor : 150}`}
@@ -267,8 +470,20 @@ export const YarnIcon = ({ color, scalingFactor }: IconProps) => (
   </div>
 )
 
-export const NpmIcon = ({ color, scalingFactor }: IconProps) => (
+export const NpmIcon = ({ color, scalingFactor, name, font }: IconProps) => (
   <div>
+    {name ? (
+      <HoverName
+        initialWidth={385.769}
+        initialHeight={150}
+        scalingFactor={scalingFactor}
+        color={color}
+        textColor={UIStyle.UIColors.white}
+        font={font}
+      >
+        {name}
+      </HoverName>
+    ) : null}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={`${scalingFactor ? 385.769 * scalingFactor : 385.769}`}
@@ -286,8 +501,20 @@ export const NpmIcon = ({ color, scalingFactor }: IconProps) => (
   </div>
 )
 
-export const UbuntuIcon = ({ color, scalingFactor }: IconProps) => (
+export const UbuntuIcon = ({ color, scalingFactor, name, font }: IconProps) => (
   <div>
+    {name ? (
+      <HoverName
+        initialWidth={150}
+        initialHeight={150}
+        scalingFactor={scalingFactor}
+        color={color}
+        textColor={UIStyle.UIColors.white}
+        font={font}
+      >
+        {name}
+      </HoverName>
+    ) : null}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={`${scalingFactor ? 150 * scalingFactor : 150}`}
@@ -304,8 +531,20 @@ export const UbuntuIcon = ({ color, scalingFactor }: IconProps) => (
   </div>
 )
 
-export const MySQLIcon = ({ color, scalingFactor }: IconProps) => (
+export const MySQLIcon = ({ color, scalingFactor, name, font }: IconProps) => (
   <div>
+    {name ? (
+      <HoverName
+        initialWidth={220.9}
+        initialHeight={150}
+        scalingFactor={scalingFactor}
+        color={color}
+        textColor={UIStyle.UIColors.white}
+        font={font}
+      >
+        {name}
+      </HoverName>
+    ) : null}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={`${scalingFactor ? 220.9 * scalingFactor : 220.9}`}
@@ -323,8 +562,20 @@ export const MySQLIcon = ({ color, scalingFactor }: IconProps) => (
   </div>
 )
 
-export const JQueryIcon = ({ color, scalingFactor }: IconProps) => (
+export const JQueryIcon = ({ color, scalingFactor, name, font }: IconProps) => (
   <div>
+    {name ? (
+      <HoverName
+        initialWidth={155.738}
+        initialHeight={150}
+        scalingFactor={scalingFactor}
+        color={color}
+        textColor={UIStyle.UIColors.white}
+        font={font}
+      >
+        {name}
+      </HoverName>
+    ) : null}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={`${scalingFactor ? 155.738 * scalingFactor : 155.738}`}
@@ -342,8 +593,20 @@ export const JQueryIcon = ({ color, scalingFactor }: IconProps) => (
   </div>
 )
 
-export const FirebaseIcon = ({ color, scalingFactor }: IconProps) => (
+export const FirebaseIcon = ({ color, scalingFactor, name, font }: IconProps) => (
   <div>
+    {name ? (
+      <HoverName
+        initialWidth={108.566}
+        initialHeight={150}
+        scalingFactor={scalingFactor}
+        color={color}
+        textColor={UIStyle.UIColors.white}
+        font={font}
+      >
+        {name}
+      </HoverName>
+    ) : null}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={`${scalingFactor ? 108.566 * scalingFactor : 108.566}`}
@@ -361,8 +624,20 @@ export const FirebaseIcon = ({ color, scalingFactor }: IconProps) => (
   </div>
 )
 
-export const CppIcon = ({ color, scalingFactor }: IconProps) => (
+export const CppIcon = ({ color, scalingFactor, name, font }: IconProps) => (
   <div>
+    {name ? (
+      <HoverName
+        initialWidth={133.925}
+        initialHeight={150}
+        scalingFactor={scalingFactor}
+        color={color}
+        textColor={UIStyle.UIColors.white}
+        font={font}
+      >
+        {name}
+      </HoverName>
+    ) : null}
     <svg
       id="ISO_C__Logo"
       data-name="ISO_C++_Logo"
@@ -421,8 +696,20 @@ export const CppIcon = ({ color, scalingFactor }: IconProps) => (
   </div>
 )
 
-export const TsIcon = ({ color, scalingFactor }: IconProps) => (
+export const TsIcon = ({ color, scalingFactor, name, font }: IconProps) => (
   <div>
+    {name ? (
+      <HoverName
+        initialWidth={150}
+        initialHeight={150}
+        scalingFactor={scalingFactor}
+        color={color}
+        textColor={UIStyle.UIColors.white}
+        font={font}
+      >
+        {name}
+      </HoverName>
+    ) : null}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={`${scalingFactor ? 150 * scalingFactor : 150}`}

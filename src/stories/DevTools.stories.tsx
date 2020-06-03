@@ -53,67 +53,67 @@ stories.add(
   })(() => (
     <div>
       <Wrapper>
-        <ReactIcon scalingFactor={1} color="#000000" />
+        <ReactIcon scalingFactor={1} name="React.js" font="Helvetica Neue" color="#000000" />
       </Wrapper>
       <Wrapper>
-        <PythonIcon scalingFactor={1} color="#000000" />
+        <PythonIcon scalingFactor={1} name="Python" font="Helvetica Neue" color="#000000" />
       </Wrapper>
       <Wrapper>
-        <WebpackIcon scalingFactor={1} color="#000000" />
+        <WebpackIcon scalingFactor={1} name="Webpack" font="Helvetica Neue"  color="#000000" />
       </Wrapper>
       <Wrapper>
-        <NodeIcon scalingFactor={1} color="#000000" />
+        <NodeIcon scalingFactor={1} name="Node.js" font="Helvetica Neue"  color="#000000" />
       </Wrapper>
       <Wrapper>
-        <PHPIcon scalingFactor={1} color="#000000" />
+        <PHPIcon scalingFactor={1} name="PHP" font="Helvetica Neue"  color="#000000" />
       </Wrapper>
       <Wrapper>
-        <JSIcon scalingFactor={1} color="#000000" />
+        <JSIcon scalingFactor={1} name="JavaScipt" font="Helvetica Neue"  color="#000000" />
       </Wrapper>
       <Wrapper>
-        <GitLargeIcon scalingFactor={1} color="#000000" />
+        <GitLargeIcon scalingFactor={1} name="Git" font="Helvetica Neue"  color="#000000" />
       </Wrapper>
       <Wrapper>
-        <JenkinsIcon scalingFactor={1} color="#000000" />
+        <JenkinsIcon scalingFactor={1} name="Jenkins" font="Helvetica Neue"  color="#000000" />
       </Wrapper>
       <Wrapper>
-        <K8sIcon scalingFactor={1} color="#000000" />
+        <K8sIcon scalingFactor={1} name="Kubernetes" font="Helvetica Neue"  color="#000000" />
       </Wrapper>
       <Wrapper>
-        <DockerIcon scalingFactor={1} color="#000000" />
+        <DockerIcon scalingFactor={1} name="Docker" font="Helvetica Neue"  color="#000000" />
       </Wrapper>
       <Wrapper>
-        <SassIcon scalingFactor={1} color="#000000" />
+        <SassIcon scalingFactor={1} name="Sass" font="Helvetica Neue"  color="#000000" />
       </Wrapper>
       <Wrapper>
-        <CssIcon scalingFactor={1} color="#000000" />
+        <CssIcon scalingFactor={1} name="CSS" font="Helvetica Neue"  color="#000000" />
       </Wrapper>
       <Wrapper>
-        <HtmlIcon scalingFactor={1} color="#000000" />
+        <HtmlIcon scalingFactor={1} name="HTML" font="Helvetica Neue"  color="#000000" />
       </Wrapper>
       <Wrapper>
-        <YarnIcon scalingFactor={1} color="#000000" />
+        <YarnIcon scalingFactor={1} name="Yarn" font="Helvetica Neue"  color="#000000" />
       </Wrapper>
       <Wrapper>
-        <NpmIcon scalingFactor={1} color="#000000" />
+        <NpmIcon scalingFactor={1} name="NPM" font="Helvetica Neue"  color="#000000" />
       </Wrapper>
       <Wrapper>
-        <UbuntuIcon scalingFactor={1} color="#000000" />
+        <UbuntuIcon scalingFactor={1} name="Ubuntu" font="Helvetica Neue"  color="#000000" />
       </Wrapper>
       <Wrapper>
-        <MySQLIcon scalingFactor={1} color="#000000" />
+        <MySQLIcon scalingFactor={1} name="MS SQL Server" font="Helvetica Neue"  color="#000000" />
       </Wrapper>
       <Wrapper>
-        <FirebaseIcon scalingFactor={1} color="#000000" />
+        <FirebaseIcon scalingFactor={1} name="Firebase" font="Helvetica Neue"  color="#000000" />
       </Wrapper>
       <Wrapper>
-        <JQueryIcon scalingFactor={1} color="#000000" />
+        <JQueryIcon scalingFactor={1} name="JQuery" font="Helvetica Neue"  color="#000000" />
       </Wrapper>
       <Wrapper>
-        <CppIcon scalingFactor={1} color="#000000" />
+        <CppIcon scalingFactor={1} name="C++" font="Helvetica Neue"  color="#000000" />
       </Wrapper>
       <Wrapper>
-        <TsIcon scalingFactor={1} color="#000000" />
+        <TsIcon scalingFactor={1} name="TypeScript" font="Helvetica Neue"  color="#000000" />
       </Wrapper>
     </div>
   )),
