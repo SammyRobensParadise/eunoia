@@ -113,6 +113,8 @@ const Right_Arrow = () => <RightArrow scalingFactor={2} color="#000000" />
   color?: string
   offset?: string
   scalingFactor?: number
+  name?: string
+  font?: string
 ```
 
 ### Design Icons
@@ -123,7 +125,7 @@ const Right_Arrow = () => <RightArrow scalingFactor={2} color="#000000" />
 import { PhotoshopIcon } from 'eunoia'
 
 // use
-const Photoshop_Icon = () => <PhotoshopIcon color="#000000" scalingFactor={1} />
+const Photoshop_Icon = () => <PhotoshopIcon name="photoshop" font="Roboto" color="#000000" scalingFactor={1} />
 ```
 
 #### List of Design Icons
@@ -147,7 +149,7 @@ const Photoshop_Icon = () => <PhotoshopIcon color="#000000" scalingFactor={1} />
 import { ReactIcon } from 'eunoia'
 
 // use
-const React_Icon = () => <ReactIcon scalingFactor={1} color="#000000" />
+const React_Icon = () => <ReactIcon scalingFactor={1} name="React.js" font="Roboto" color="#000000" />
 ```
 
 #### List of Dev Icons
@@ -182,7 +184,7 @@ const React_Icon = () => <ReactIcon scalingFactor={1} color="#000000" />
 import { JiraIcon } from 'eunoia'
 
 // use
-const Jira_Icon = () => <JiraIcon scalingFactor={1} color="#000000" />
+const Jira_Icon = () => <JiraIcon scalingFactor={1} name="Jira" font="Roboto" color="#000000" />
 ```
 
 #### List of Industry Icons
