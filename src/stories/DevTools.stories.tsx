@@ -41,12 +41,14 @@ stories.add(
     text: `
     Default Icon Usage:
     ~~~jsx
-    <ReactIcon color="red" scalingFactor={1} />
+    <ReactIcon color="red" name="React.js" font="Helvetica Neue" scalingFactor={1} />
     ~~~
       | Props          | Description             | Type    |
       |----------------|-------------------------|---------|
       | color          |   color                 | string  |
       | scaling factor | transparent background  | number  |
+      | name           | name of icon            | string  |
+      | font           | font of name            | string  |
     `,
     inline: true,
     source: true,

@@ -30,46 +30,63 @@ stories.add(
     text: `
     Default Icon Usage:
     ~~~jsx
-    <JiraIcon color="red" scalingFactor={1} />
+    <JiraIcon color="red" name="Jira" font="Helvetica Neue" scalingFactor={1} />
     ~~~
       | Props          | Description             | Type    |
       |----------------|-------------------------|---------|
       | color          |   color                 | string  |
       | scaling factor | transparent background  | number  |
+      | name           | name of icon            | string  |
+      | font           | font of name            | string  |
     `,
     inline: true,
     source: true,
   })(() => (
     <div>
       <Wrapper>
-        <JiraIcon scalingFactor={1} color="#000000" />
+        <JiraIcon scalingFactor={1} name="Jira" font="Helvetica Neue" color="#000000" />
       </Wrapper>
       <Wrapper>
-        <GithubIndustryIcon scalingFactor={1} color="#000000" />
+        <GithubIndustryIcon scalingFactor={1} name="Github" font="Helvetica Neue" color="#000000" />
       </Wrapper>
       <Wrapper>
-        <BitbucketIcon scalingFactor={1} color="#000000" />
+        <BitbucketIcon scalingFactor={1} name="Bit Bucket" font="Helvetica Neue" color="#000000" />
       </Wrapper>
       <Wrapper>
-        <ConfluenceIcon scalingFactor={1} color="#000000" />
+        <ConfluenceIcon scalingFactor={1} name="Confluence" font="Helvetica Neue" color="#000000" />
       </Wrapper>
       <Wrapper>
-        <GoogleAnalyticsIcon scalingFactor={1} color="#000000" />
+        <GoogleAnalyticsIcon
+          scalingFactor={1}
+          name="Google Analytics"
+          font="Helvetica Neue"
+          color="#000000"
+        />
       </Wrapper>
       <Wrapper>
-        <GoogleCloudIcon scalingFactor={1} color="#000000" />
+        <GoogleCloudIcon
+          scalingFactor={1}
+          name="Google Cloud"
+          font="Helvetica Neue"
+          color="#000000"
+        />
       </Wrapper>
       <Wrapper>
-        <AWSIcon scalingFactor={1} color="#000000" />
+        <AWSIcon scalingFactor={1} name="Amazon Web Services" font="Helvetica Neue" color="#000000" />
       </Wrapper>
       <Wrapper>
-        <InvisionIndustryIcon scalingFactor={1} color="#000000" />
+        <InvisionIndustryIcon
+          name="Invision"
+          font="Helvetica Neue"
+          scalingFactor={1}
+          color="#000000"
+        />
       </Wrapper>
       <Wrapper>
-        <SlackIcon scalingFactor={1} color="#000000" />
+        <SlackIcon scalingFactor={1} name="Slack" font="Helvetica Neue" color="#000000" />
       </Wrapper>
       <Wrapper>
-        <MicrosoftIcon scalingFactor={1} color="#000000" />
+        <MicrosoftIcon scalingFactor={1} name="Microsoft .NET" font="Helvetica Neue" color="#000000" />
       </Wrapper>
     </div>
   )),
