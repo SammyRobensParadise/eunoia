@@ -83,6 +83,7 @@ type HoverNameProps = {
 
 const HoverName = styled.div<HoverNameProps>`
   opacity: 0;
+  display: initial;
   width: ${(p) =>
     p.scalingFactor && p.initialWidth ? `${p.scalingFactor * p.initialWidth}px` : `150px`};
   height: ${(p) =>
