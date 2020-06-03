@@ -12,52 +12,70 @@ type PhotoshopIconProps = {
 type IllustratorIconProps = {
   color: string
   scalingFactor: number
+  name?: string
+  font?: string
 }
 
 type ExperienceDesignerProps = {
   color: string
   scalingFactor: number
+  name?: string
+  font?: string
 }
 
 type FigmaIconProps = {
   color: string
   scalingFactor: number
+  name?: string
+  font?: string
 }
 
 type SketchIconProps = {
   color: string
   scalingFactor: number
+  name?: string
+  font?: string
 }
 
 type InvisionIconProps = {
   color: string
   scalingFactor: number
+  name?: string
+  font?: string
 }
 
 type AftereffectsIconProps = {
   color: string
   scalingFactor: number
+  name?: string
+  font?: string
 }
 
 type IndesignIconProps = {
   color: string
   scalingFactor: number
+  name?: string
+  font?: string
 }
 
 type MaterialDesignIconProps = {
   color: string
   scalingFactor: number
+  name?: string
+  font?: string
 }
 
 type CreativecloudIconProps = {
   color: string
   scalingFactor: number
+  name?: string
+  font?: string
 }
 type HoverNameProps = {
   initialWidth: number
   initialHeight: number
-  color: string
-  textColor: string
+  color?: string
+  textColor?: string
   scalingFactor: number
   font?: string
 }
@@ -114,8 +132,20 @@ export const PhotoshopIcon = ({ color, scalingFactor, name, font }: PhotoshopIco
     </svg>
   </div>
 )
-export const IllustratorIcon = ({ color, scalingFactor }: IllustratorIconProps) => (
+export const IllustratorIcon = ({ color, scalingFactor, name, font }: IllustratorIconProps) => (
   <div>
+    {name ? (
+      <HoverName
+        initialWidth={153.846}
+        initialHeight={150}
+        scalingFactor={scalingFactor}
+        color={color}
+        textColor={UIStyle.UIColors.white}
+        font={font}
+      >
+        {name}
+      </HoverName>
+    ) : null}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={`${scalingFactor ? 153.846 * scalingFactor : 153.846}`}
@@ -132,8 +162,25 @@ export const IllustratorIcon = ({ color, scalingFactor }: IllustratorIconProps) 
     </svg>
   </div>
 )
-export const ExperienceDesignerIcon = ({ color, scalingFactor }: ExperienceDesignerProps) => (
+export const ExperienceDesignerIcon = ({
+  color,
+  scalingFactor,
+  name,
+  font,
+}: ExperienceDesignerProps) => (
   <div>
+    {name ? (
+      <HoverName
+        initialWidth={153.846}
+        initialHeight={150}
+        scalingFactor={scalingFactor}
+        color={color}
+        textColor={UIStyle.UIColors.white}
+        font={font}
+      >
+        {name}
+      </HoverName>
+    ) : null}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={`${scalingFactor ? 153.846 * scalingFactor : 153.846}`}
@@ -150,8 +197,20 @@ export const ExperienceDesignerIcon = ({ color, scalingFactor }: ExperienceDesig
     </svg>
   </div>
 )
-export const FigmaIcon = ({ color, scalingFactor }: FigmaIconProps) => (
+export const FigmaIcon = ({ color, scalingFactor, name, font }: FigmaIconProps) => (
   <div>
+    {name ? (
+      <HoverName
+        initialWidth={100}
+        initialHeight={150}
+        scalingFactor={scalingFactor}
+        color={color}
+        textColor={UIStyle.UIColors.white}
+        font={font}
+      >
+        {name}
+      </HoverName>
+    ) : null}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={`${scalingFactor ? 100 * scalingFactor : 100}`}
@@ -169,8 +228,20 @@ export const FigmaIcon = ({ color, scalingFactor }: FigmaIconProps) => (
   </div>
 )
 
-export const SketchIcon = ({ color, scalingFactor }: SketchIconProps) => (
+export const SketchIcon = ({ color, scalingFactor, name, font }: SketchIconProps) => (
   <div>
+    {name ? (
+      <HoverName
+        initialWidth={165.502}
+        initialHeight={150}
+        scalingFactor={scalingFactor}
+        color={color}
+        textColor={UIStyle.UIColors.white}
+        font={font}
+      >
+        {name}
+      </HoverName>
+    ) : null}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={`${scalingFactor ? 165.502 * scalingFactor : 165.502}`}
@@ -188,8 +259,20 @@ export const SketchIcon = ({ color, scalingFactor }: SketchIconProps) => (
   </div>
 )
 
-export const InvisionIcon = ({ color, scalingFactor }: InvisionIconProps) => (
+export const InvisionIcon = ({ color, scalingFactor, name, font }: InvisionIconProps) => (
   <div>
+    {name ? (
+      <HoverName
+        initialWidth={150}
+        initialHeight={150}
+        scalingFactor={scalingFactor}
+        color={color}
+        textColor={UIStyle.UIColors.white}
+        font={font}
+      >
+        {name}
+      </HoverName>
+    ) : null}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={`${scalingFactor ? 150 * scalingFactor : 150}`}
@@ -206,8 +289,20 @@ export const InvisionIcon = ({ color, scalingFactor }: InvisionIconProps) => (
   </div>
 )
 
-export const AftereffectsIcon = ({ color, scalingFactor }: AftereffectsIconProps) => (
+export const AftereffectsIcon = ({ color, scalingFactor, name, font }: AftereffectsIconProps) => (
   <div>
+    {name ? (
+      <HoverName
+        initialWidth={153.846}
+        initialHeight={150}
+        scalingFactor={scalingFactor}
+        color={color}
+        textColor={UIStyle.UIColors.white}
+        font={font}
+      >
+        {name}
+      </HoverName>
+    ) : null}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={`${scalingFactor ? 153.846 * scalingFactor : 153.846}`}
@@ -225,8 +320,20 @@ export const AftereffectsIcon = ({ color, scalingFactor }: AftereffectsIconProps
   </div>
 )
 
-export const IndesignIcon = ({ color, scalingFactor }: IndesignIconProps) => (
+export const IndesignIcon = ({ color, scalingFactor, name, font }: IndesignIconProps) => (
   <div>
+    {name ? (
+      <HoverName
+        initialWidth={153.846}
+        initialHeight={150}
+        scalingFactor={scalingFactor}
+        color={color}
+        textColor={UIStyle.UIColors.white}
+        font={font}
+      >
+        {name}
+      </HoverName>
+    ) : null}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={`${scalingFactor ? 153.846 * scalingFactor : 153.846}`}
@@ -244,8 +351,25 @@ export const IndesignIcon = ({ color, scalingFactor }: IndesignIconProps) => (
   </div>
 )
 
-export const MaterialDesignIcon = ({ color, scalingFactor }: MaterialDesignIconProps) => (
+export const MaterialDesignIcon = ({
+  color,
+  scalingFactor,
+  name,
+  font,
+}: MaterialDesignIconProps) => (
   <div>
+    {name ? (
+      <HoverName
+        initialWidth={150}
+        initialHeight={150}
+        scalingFactor={scalingFactor}
+        color={color}
+        textColor={UIStyle.UIColors.white}
+        font={font}
+      >
+        {name}
+      </HoverName>
+    ) : null}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={`${scalingFactor ? 150 * scalingFactor : 150}`}
@@ -262,8 +386,20 @@ export const MaterialDesignIcon = ({ color, scalingFactor }: MaterialDesignIconP
   </div>
 )
 
-export const CreativecloudIcon = ({ color, scalingFactor }: CreativecloudIconProps) => (
+export const CreativecloudIcon = ({ color, scalingFactor, name, font }: CreativecloudIconProps) => (
   <div>
+    {name ? (
+      <HoverName
+        initialWidth={200}
+        initialHeight={150}
+        scalingFactor={scalingFactor}
+        color={color}
+        textColor={UIStyle.UIColors.white}
+        font={font}
+      >
+        {name}
+      </HoverName>
+    ) : null}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={`${scalingFactor ? 200 * scalingFactor : 200}`}
